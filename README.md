@@ -1,4 +1,4 @@
-# MASS Encryptor 🚀🔐
+# Web Application Name: MASS Encryptor 🚀🔐
 
 **Group Members:**
 - **Alicia Loi** 🎓
@@ -9,10 +9,6 @@
   - Email: mollah25@my.yorku.ca
 - **Steeve Nchanda** 🔍
   - Email: snchanda@my.yorku.ca
-
-### Project Proposal:
-
-### Web Application Name: MASS Encryptor
 
 **Purpose:**  
 MASS Encryptor is a web application designed to engage users in cryptography by providing tools to encrypt and decrypt messages using common ciphers. It's an educational and fun tool suitable for a wide range of users. 🎯📚
