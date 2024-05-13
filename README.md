@@ -10,7 +10,7 @@
 - **Steeve Nchanda** 🔍
   - Email: snchanda@my.yorku.ca
 
-**Project Proposal:**
+### Project Proposal:
 
 ### Web Application Name: MASS Encryptor
 
