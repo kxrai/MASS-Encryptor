@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support Page - MASS Encryptor</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
     <header>
@@ -12,33 +12,49 @@
     </header>
 
     <main>
-        <section id="description">
-            <h2>About Our Tool</h2>
-            <p>Welcome to our fun and educational cryptography tool! Here, you can encrypt and decrypt messages using various common ciphers. We aim to provide a platform where users can learn and engage with cryptography in an interactive way.</p>
-        </section>
-
-        <section id="comments">
-            <h2>Comments & Feedback</h2>
-            <p>We'd love to hear your suggestions for new features or improvements to our tool. Please leave your comments below:</p>
-            <form id="commentForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="comment">Comment:</label>
-                <textarea id="comment" name="comment" rows="5" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-
-        <section id="commentsDisplay">
-            <h2>User Comments</h2>
-            <div id="commentList">
-                <!-- Comments will be dynamically inserted here -->
+        <div class="navbar">
+            <div class="logo">Logo</div>
+            <div class="links">
+                <a href="#">MASS Encryption</a>
+                <a href="#">About</a>
+                <a href="#">Learn</a>
+                <a href="#">Translator</a>
             </div>
+            <a href="#" class="support">Support</a>
+        </div>
+
+        <section id="support">
+            <h2>Support</h2>
+            <div class="support-section">
+                <h3>Rate our page:</h3>
+                <div class="rating">
+                    ★★★★★
+                </div>
+            </div>
+            <div class="support-section">
+                <p>We'd love to hear your suggestions for new features or improvements to our tool. Please leave your comments below:</p>
+                <h3>Leave a review:</h3>
+            <form id="commentForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <textarea id="review" name="review" rows="5" required></textarea>
+                <button type="submit">Submit Review</button>
+            </div>
+            <div class="support-section">
+                <h3>Report a bug:</h3>
+                <button type="button">Report a Bug</button>
+            </div>
+            <div class="support-section">
+                <h3>FAQ</h3>
+                <p>Check our <a href="#">FAQ section</a> for common questions and answers.</p>
+            </div>
+            <!-- <p class="source-code">Src code: do not copy</p> -->
         </section>
     </main>
 
@@ -46,7 +62,6 @@
         <p>&copy; 2024 MASS Encryptor. All rights reserved.</p>
     </footer>
 
-    <script src="scripts.js"></script>
+    <!-- <script src="scripts.js"></script> -->
 </body>
 </html>
-
