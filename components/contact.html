@@ -3,22 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact | MASS Encryption</title>
+    <script>
+        function validateEmail(input) {
+            var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return regex.test(input);
+        }
+
+        function validateForm(event) {
+            var emailInput = document.getElementById('email');
+            if (!validateEmail(emailInput.value)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+            }
+        }
+    </script>
 </head>
 <body>
+    <div class="navbar">
+        <div class="logo">Logo</div>
+        <div class="links">
+            <a href="index.html">MASS Encryption</a>
+            <a href="about.html">About</a>
+            <a href="learn.html">Learn</a>
+            <a href="translator.html">Translator</a>
+            <a href="practice.html">Practice</a>
+            <a href="support.html">Support</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
     <h1>Contact Us</h1>
-    <form action="#" method="post">
+    <form action="#" method="post" onsubmit="validateForm(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
         
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address."><br><br>
         
         <label for="message">Message:</label><br>
         <textarea id="message" name="message" rows="4" required></textarea><br><br>
         
         <input type="submit" value="Submit">
     </form>
+    
     <footer>
         <p>&copy; 2024 MASS Encryptor. All rights reserved.</p>
     </footer>
