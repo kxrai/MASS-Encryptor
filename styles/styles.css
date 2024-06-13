@@ -43,6 +43,48 @@ h1 {
     margin-bottom: 40px;
 }
 
+label {
+    color: #f5e042;
+    font-size: 1.2em;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #f5e042;
+    border-radius: 5px;
+    background-color: #222;
+    color: #f5f5f5;
+}
+
+input[type="submit"] {
+    background-color: #f5e042;
+    color: #222;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #f5f5f5;
+    color: #111;
+}
+
+footer {
+    background-color: #111;
+    color: #f5e042;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Specific Styles for Learn Page */
 .boxes {
     display: flex;
     flex-wrap: wrap;
@@ -81,14 +123,4 @@ hr {
     height: 1px;
     background-color: #f5e042;
     margin: 20px 0;
-}
-
-footer {
-    background-color: #111;
-    color: #f5e042;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
