@@ -50,26 +50,12 @@ h1 {
 }
 
 form {
-    background: url('../images/form_bg.jpeg') center/cover no-repeat;
+    background-color: rgba(30, 30, 46, 0.8);
     padding: 20px;
     border: 2px solid #f5e042;
     border-radius: 10px;
     max-width: 600px;
     margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
-
-form::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(30, 30, 46, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: -1;
 }
 
 label {
