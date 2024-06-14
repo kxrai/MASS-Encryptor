@@ -116,7 +116,154 @@ footer {
     padding: 20px;
     text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
+}a/* General Styles */
+body {
+    background-color: #1e1e2e;
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+    border-bottom: 2px solid #f5e042;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: #f5e042;
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+}
+
+.links a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.links a:hover {
+    color: #f5e042;
+}
+
+.content {
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3em;
+    color: #f5e042;
+    margin-bottom: 40px;
+}
+
+form {
+    background-color: rgba(30, 30, 46, 0.8);
+    padding: 20px;
+    border: 2px solid #f5e042;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    color: #f5e042;
+    font-size: 1.2em;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: calc(100% - 22px); /* Adjust width to account for padding and border */
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #f5e042;
+    border-radius: 5px;
+    background-color: #222;
+    color: #f5f5f5;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+textarea {
+    height: 100px; /* Set a height for the textarea */
+}
+
+input[type="submit"] {
+    background-color: #f5e042;
+    color: #222;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #f5f5f5;
+    color: #111;
+}
+
+footer {
+    background-color: #111;
+    color: #f5e042;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Specific Styles for Learn Page */
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.box {
+    background-color: #222;
+    border: 2px solid #f5e042;
+    border-radius: 10px;
+    flex: 1 1 calc(33% - 40px);
+    max-width: calc(33% - 40px);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #f5e042;
+}
+
+h2 {
+    color: #f5e042;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #ddd;
+    font-size: 1.1em;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #f5e042;
+    margin: 20px 0;
+}
+
 
 .box:hover {
     transform: scale(1.05);
