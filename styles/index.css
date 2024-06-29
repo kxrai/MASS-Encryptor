@@ -13,16 +13,16 @@ body {
     align-items: center;
     background-color: #111;
     padding: 1rem;
-    border-bottom: 2px solid #00ffff; 
+    border-bottom: 2px solid #00d1ff; /* Mix of electric blue and cyan */
 }
 
 .navbar .logo {
     font-size: 1.5rem;
-    color: #00ffff; 
+    color: #00d1ff; /* Mix of electric blue and cyan */
 }
 
 .navbar .links a {
-    color: #00ffff; 
+    color: #00d1ff; /* Mix of electric blue and cyan */
     margin: 0 1rem;
     text-decoration: none;
 }
@@ -38,10 +38,10 @@ main {
 
 footer {
     background-color: #111;
-    color: #00ffff;
+    color: #00d1ff; /* Mix of electric blue and cyan */
     text-align: center;
     padding: 1rem;
-    border-top: 2px solid #00ffff; 
+    border-top: 2px solid #00d1ff; /* Mix of electric blue and cyan */
 }
 
 /* Index Page Styles */
@@ -53,8 +53,8 @@ footer {
 
 #mass-encryptor h1 {
     font-size: 3rem;
-    color: #00ffff; 
-    text-shadow: 0 0 10px #00ffff; 
+    color: #00d1ff; /* Mix of electric blue and cyan */
+    text-shadow: 0 0 10px #00d1ff; /* Mix of electric blue and cyan */
 }
 
 #mass-encryptor .description {
@@ -73,7 +73,7 @@ footer {
 .cta-button {
     font-family: 'VT323', monospace; 
     background-color: #111;
-    color: #00ffff;
+    color: #00d1ff; /* Mix of electric blue and cyan */
     padding: 0.8rem 1.5rem; 
     border: none;
     cursor: pointer;
@@ -81,14 +81,14 @@ footer {
     transition: all 0.3s ease;
     border-radius: 25px; 
     font-size: 1rem; 
-    box-shadow: 0 0 20px #00ffff; 
+    box-shadow: 0 0 20px #00d1ff; /* Mix of electric blue and cyan */
     text-decoration: none;
 }
 
 .cta-button:hover {
-    background-color: #00ffff;
+    background-color: #00d1ff; /* Mix of electric blue and cyan */
     color: #111;
-    box-shadow: 0 0 30px #00ffff; 
+    box-shadow: 0 0 30px #00d1ff; /* Mix of electric blue and cyan */
 }
 
 #decoder-image {
@@ -99,8 +99,8 @@ footer {
 #decoder-image img {
     max-width: 100%;
     height: auto;
-    border: 2px solid #00ffff; 
-    box-shadow: 0 0 20px #00ffff;
+    border: 2px solid #00d1ff; /* Mix of electric blue and cyan */
+    box-shadow: 0 0 20px #00d1ff; /* Mix of electric blue and cyan */
 }
 
 /* Responsive Design */
@@ -160,7 +160,7 @@ footer {
         width: 100%;
         text-align: left;
         padding: 0.5rem 1rem;
-        border-bottom: 1px solid #00ffff;
+        border-bottom: 1px solid #00d1ff; /* Mix of electric blue and cyan */
     }
 
     main {
@@ -187,7 +187,7 @@ footer {
         width: 100%;
         text-align: left;
         padding: 0.5rem 1rem;
-        border-bottom: 1px solid #00ffff;
+        border-bottom: 1px solid #00d1ff; /* Mix of electric blue and cyan */
     }
 
     main {
