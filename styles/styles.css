@@ -50,6 +50,15 @@ footer {
     background-size: cover;
     background-attachment: fixed;
     padding: 2rem;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#mass-encryptor {
+    flex: 1; /* Ensure the section grows to fill available space */
+    padding-bottom: 4rem; 
 }
 
 #mass-encryptor h1 {
@@ -90,18 +99,6 @@ footer {
     background-color: #00d1ff; /* Mix of electric blue and cyan */
     color: #111;
     box-shadow: 0 0 30px #00d1ff; /* Mix of electric blue and cyan */
-}
-
-#decoder-image {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-#decoder-image img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #00d1ff; /* Mix of electric blue and cyan */
-    box-shadow: 0 0 20px #00d1ff; /* Mix of electric blue and cyan */
 }
 
 /* About Page Styles */
