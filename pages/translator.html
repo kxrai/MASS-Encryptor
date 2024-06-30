@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webpage Layout</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/index.css">
 
 </head>
 <body>
@@ -35,22 +36,24 @@
                         </select>
                     </th>
                     <th><button><img src="../images/switch.png" alt="switch button" width="35 px" height="35 px"></button></th>
-                    <th>Result</th>
+                    <th>Decryption</th>
                 </tr>
                 <tr>
-                    <td><textarea id="input" class="box" placeholder="Enter your text here..." rows="20" cols="50"></textarea></td>
+                    <td><textarea id="input" class="box form" placeholder="Enter your text here..." rows="20" cols="50"></textarea></td>
                     <td></td>
-                    <td><textarea id="result" class="box" placeholder="Result here..." rows="20" cols="50"></textarea></td>
+                    <td><textarea id="result" class="box form" placeholder="Result here..." rows="20" cols="50"></textarea></td>
                 </tr>
             </table>
 
             <label for="shift">Caesar Shift:</label>
-            <input type="number" min="1" max="25" placeholder="3" id="shift">
+            <input class="form" type="number" min="1" max="25" placeholder="3" id="shift">
+            <br>
             <br>
             <label for="keyword">Keyword:</label>
-            <input type="text" placeholder="keyword" id="keyword">
+            <input class="form" type="text" placeholder="keyword" id="keyword">
         </div>
-        <button>Encrypt</button>
+        <br>
+        <button class="cta-button">Encrypt</button>
     </div>
     <footer>
         <p>&copy; 2024 MASS Encryptor. All rights reserved. <br>Graphics from <a href="https://flaticon.com">Flaticon</a></p>

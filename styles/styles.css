@@ -12,7 +12,7 @@ body {
 }
 .glow {
     color: #fff;
-    animation: glow 5s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
 }
 @keyframes glow {
     from {
@@ -222,7 +222,34 @@ footer {
     border: 2px solid #00e0e0; 
     box-shadow: 0 0 20px #00e0e0;
 }
+
 th, td {
     padding: 10px;
     border-color: white;
+}
+
+select {
+    display: inline-block;
+    background-color: #111;
+    color: white;
+    font-family: monospace;
+    padding: 10px 15px;
+    box-shadow: 0px 5px 5px 0px rgba(141, 216, 245, 0.8);
+  }
+
+select option:checked {
+    background-color: cyan;
+    color: black;
+}
+
+.form {
+    padding: 5px;
+    margin: 5px;
+    background-color: #111;
+    color: white;
+    border: 2px solid #00e0e0;
+}
+
+.form:focus {
+    box-shadow: 0 0 20px #00e0e0;
 }
