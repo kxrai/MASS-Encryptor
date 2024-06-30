@@ -7,38 +7,22 @@ body {
     background-color: #0a0a0a;
 }
 
-.content {
-    margin: 20px;
-}
-.glow {
-    color: #fff;
-    animation: glow 3s ease-in-out infinite alternate;
-}
-@keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #008080, 0 0 40px #008080, 0 0 50px #008080, 0 0 60px;
-    }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #00e0e0, 0 0 40px #00e0e0, 0 0 50px #00e0e0, 0 0 60px #00e0e0;
-    }
-  }
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #111;
     padding: 1rem;
-    border-bottom: 2px solid #008080; 
+    border-bottom: 2px solid #00d1ff; /* Mix of electric blue and cyan */
 }
 
 .navbar .logo {
     font-size: 1.5rem;
-    color: #00e0e0; 
+    color: #00d1ff; /* Mix of electric blue and cyan */
 }
 
 .navbar .links a {
-    color: #00e0e0; 
+    color: #00d1ff; /* Mix of electric blue and cyan */
     margin: 0 1rem;
     text-decoration: none;
 }
@@ -54,35 +38,42 @@ main {
 
 footer {
     background-color: #111;
-    color: #00e0e0;
+    color: #00d1ff; /* Mix of electric blue and cyan */
     text-align: center;
     padding: 1rem;
-    border-top: 2px solid #008080; 
+    border-top: 2px solid #00d1ff; /* Mix of electric blue and cyan */
 }
 
 /* Index Page Styles */
-.index-page {
+#index-page {
     background-image: url('TBD'); 
     background-size: cover;
     background-attachment: fixed;
 }
 
-.index-page #mass-encryptor h1 {
+#mass-encryptor h1 {
     font-size: 3rem;
-    color: #ffb000; 
-    text-shadow: 0 0 10px #ffb000; 
+    color: #fff; /* White text */
+    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
 }
 
-.index-page #mass-encryptor .description {
+#mass-encryptor .description {
     font-size: 1.2rem;
     margin: 1rem 0;
     color: #ccc;
 }
 
-.index-page .cta-button {
+#main-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cta-button {
     font-family: 'VT323', monospace; 
     background-color: #111;
-    color: #00e0e0;
+    color: #00d1ff; /* Mix of electric blue and cyan */
     padding: 0.8rem 1.5rem; 
     border: none;
     cursor: pointer;
@@ -90,23 +81,111 @@ footer {
     transition: all 0.3s ease;
     border-radius: 25px; 
     font-size: 1rem; 
-    box-shadow: 0 0 20px #00e0e0; 
+    box-shadow: 0 0 20px #00d1ff; /* Mix of electric blue and cyan */
+    text-decoration: none;
 }
 
-.index-page .cta-button:hover {
-    background-color: #00e0e0;
+.cta-button:hover {
+    background-color: #00d1ff; /* Mix of electric blue and cyan */
     color: #111;
-    box-shadow: 0 0 30px #00e0e0; 
+    box-shadow: 0 0 30px #00d1ff; /* Mix of electric blue and cyan */
 }
 
-.index-page #decoder-image {
+#decoder-image {
     text-align: center;
     margin-top: 2rem;
 }
 
-.index-page #decoder-image img {
+#decoder-image img {
     max-width: 100%;
     height: auto;
+    border: 2px solid #00d1ff; /* Mix of electric blue and cyan */
+    box-shadow: 0 0 20px #00d1ff; /* Mix of electric blue and cyan */
+}
+
+/* About Page Styles */
+#about-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #00d1ff;
+    border-radius: 10px;
+    background-color: #222;
+}
+
+#about-page h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #00d1ff;
+}
+
+#about-page h2, #about-page h3 {
+    color: #00d1ff;
+}
+
+/* Support Page Styles */
+#support-page .box {
+    padding-left: 15px;
+    border: 2px solid #00d1ff;
+    box-shadow: 0 0 20px #00d1ff;
+}
+
+#support-page h1.glow {
+    color: #fff;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #008080, 0 0 40px #008080, 0 0 50px #008080, 0 0 60px #008080, 0 0 70px #008080;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #00e0e0, 0 0 40px #00e0e0, 0 0 50px #00e0e0, 0 0 60px #00e0e0, 0 0 70px #00e0e0, 0 0 80px #00e0e0;
+    }
+}
+
+/* Contact Page Styles */
+#contact-page .form {
+    padding: 5px;
+    margin: 5px;
+    background-color: #111;
+    color: white;
+    border: 2px solid #00e0e0;
+}
+
+#contact-page .form:focus {
+    box-shadow: 0 0 20px #00e0e0;
+}
+
+/* Translator Page Styles */
+#translator-page .box {
+    padding-left: 15px;
+    border: 2px solid #00e0e0; 
+    box-shadow: 0 0 20px #00e0e0;
+}
+
+#translator-page th, #translator-page td {
+    padding: 10px;
+    border-color: white;
+}
+
+#translator-page select {
+    display: inline-block;
+    background-color: #111;
+    color: white;
+    font-family: monospace;
+    padding: 10px 15px;
+    box-shadow: 0px 5px 5px 0px rgba(141, 216, 245, 0.8);
+}
+
+#translator-page select option:checked {
+    background-color: cyan;
+    color: black;
+}
+
+/* Practice Page Styles */
+#practice-page .box {
+    padding-left: 15px;
     border: 2px solid #00e0e0; 
     box-shadow: 0 0 20px #00e0e0;
 }
@@ -148,10 +227,6 @@ footer {
     #mass-encryptor .description {
         font-size: 1.1rem;
     }
-    
-    table, tbody, tr, td {
-        display: block;
-    }
 }
 
 @media (max-width: 768px) {
@@ -172,7 +247,7 @@ footer {
         width: 100%;
         text-align: left;
         padding: 0.5rem 1rem;
-        border-bottom: 1px solid #00e0e0;
+        border-bottom: 1px solid #00d1ff; /* Mix of electric blue and cyan */
     }
 
     main {
@@ -185,10 +260,6 @@ footer {
 
     #mass-encryptor .description {
         font-size: 1rem;
-    }
-
-    table, tbody, tr, td {
-        display: block;
     }
 }
 
@@ -203,7 +274,7 @@ footer {
         width: 100%;
         text-align: left;
         padding: 0.5rem 1rem;
-        border-bottom: 1px solid #00e0e0;
+        border-bottom: 1px solid #00d1ff; /* Mix of electric blue and cyan */
     }
 
     main {
@@ -222,45 +293,4 @@ footer {
         padding: 0.7rem 1.5rem;
         font-size: 1rem;
     }
-    table, tbody, tr, td {
-        display: block;
-    }
-}
-
-/* Add specific styles for other pages here */
-.box {
-    padding-left: 15px;
-    border: 2px solid #00e0e0; 
-    box-shadow: 0 0 20px #00e0e0;
-}
-
-th, td {
-    padding: 10px;
-    border-color: white;
-}
-
-select {
-    display: inline-block;
-    background-color: #111;
-    color: white;
-    font-family: monospace;
-    padding: 10px 15px;
-    box-shadow: 0px 5px 5px 0px rgba(141, 216, 245, 0.8);
-  }
-
-select option:checked {
-    background-color: cyan;
-    color: black;
-}
-
-.form {
-    padding: 5px;
-    margin: 5px;
-    background-color: #111;
-    color: white;
-    border: 2px solid #00e0e0;
-}
-
-.form:focus {
-    box-shadow: 0 0 20px #00e0e0;
 }
