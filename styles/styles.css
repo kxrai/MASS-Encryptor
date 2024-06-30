@@ -209,14 +209,6 @@ footer {
     main {
         padding: 2rem;
     }
-
-    #mass-encryptor h1 {
-        font-size: 3rem;
-    }
-
-    #mass-encryptor .description {
-        font-size: 1.2rem;
-    }
 }
 
 @media (max-width: 1024px) {
@@ -227,14 +219,6 @@ footer {
 
     main {
         padding: 1.5rem;
-    }
-
-    #mass-encryptor h1 {
-        font-size: 2.5rem;
-    }
-
-    #mass-encryptor .description {
-        font-size: 1.1rem;
     }
 }
 
@@ -262,14 +246,6 @@ footer {
     main {
         padding: 1rem;
     }
-
-    #mass-encryptor h1 {
-        font-size: 2rem;
-    }
-
-    #mass-encryptor .description {
-        font-size: 1rem;
-    }
 }
 
 @media (max-width: 576px) {
@@ -288,18 +264,5 @@ footer {
 
     main {
         padding: 0.5rem;
-    }
-
-    #mass-encryptor h1 {
-        font-size: 1.5rem;
-    }
-
-    #mass-encryptor .description {
-        font-size: 0.9rem;
-    }
-
-    #mass-encryptor button {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
     }
 }
