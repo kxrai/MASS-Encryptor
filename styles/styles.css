@@ -104,6 +104,13 @@ footer {
 }
 
 /* About Page Styles */
+.glowing-text{
+    text-align: center;
+    font-size: 3rem;
+    color: #fff; /* White text */
+    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
+}
+
 #about-page {
     max-width: 800px;
     margin: 0 auto;
@@ -120,7 +127,9 @@ footer {
 }
 
 #about-page h2, #about-page h3 {
-    color: #00d1ff;
+    font-size: 3rem;
+    color: #fff; /* White text */
+    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
 }
 
 /* Support Page Styles */
