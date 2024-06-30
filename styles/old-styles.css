@@ -1,16 +1,10 @@
-/* General Styles */
+General Styles
 body {
     font-family: 'VT323', monospace;
     margin: 0;
     padding: 0;
     color: #e0e0e0;
     background-color: #0a0a0a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
 }
 
 .navbar {
@@ -20,17 +14,11 @@ body {
     background-color: #111;
     padding: 1rem;
     border-bottom: 2px solid #00d1ff; /* Mix of electric blue and cyan */
-    width: 100%;
 }
 
-.navbar .logo img {
-    height: 200px;
-}
-
-.navbar .links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbar .logo {
+    font-size: 1.5rem;
+    color: #00d1ff; /* Mix of electric blue and cyan */
 }
 
 .navbar .links a {
@@ -46,12 +34,6 @@ body {
 main {
     padding: 2rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 800px;
-    width: 100%;
 }
 
 footer {
@@ -60,7 +42,6 @@ footer {
     text-align: center;
     padding: 1rem;
     border-top: 2px solid #00d1ff; /* Mix of electric blue and cyan */
-    width: 100%;
 }
 
 /* Index Page Styles */
@@ -149,43 +130,6 @@ footer {
     font-size: 3rem;
     color: #fff; /* White text */
     text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
-}
-
-/* Learn Page Styles */
-.content {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.box {
-    background-color: #111;
-    border: 2px solid #00d1ff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #00d1ff;
-    padding: 20px;
-    color: #e0e0e0;
-    width: 100%;
-    transition: transform 0.3s ease;
-}
-
-.box:hover {
-    transform: scale(1.05);
-}
-
-.box h2 {
-    font-size: 2rem;
-    color: #00d1ff; /* Mix of electric blue and cyan */
-    text-shadow: 0 0 10px #00d1ff;
-}
-
-.box p {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    color: #ccc;
 }
 
 /* Support Page Styles */
@@ -325,10 +269,6 @@ footer {
 
     #mass-encryptor .description {
         font-size: 1rem;
-    }
-
-    .box {
-        max-width: 100%;
     }
 }
 
