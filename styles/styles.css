@@ -58,7 +58,7 @@ footer {
 
 #mass-encryptor {
     flex: 1; /* Ensure the section grows to fill available space */
-    padding-bottom: 4rem; 
+    padding-bottom: 2rem; 
 }
 
 #mass-encryptor h1 {
