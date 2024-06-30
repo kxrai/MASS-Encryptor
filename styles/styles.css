@@ -46,7 +46,7 @@ footer {
 
 /* Index Page Styles */
 #index-page {
-    background-image: url('../images/decodingImage.gif'); 
+    background-image: url('../images/image_background.gif'); 
     background-size: cover;
     background-attachment: fixed;
     padding: 2rem;
