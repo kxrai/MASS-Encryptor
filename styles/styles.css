@@ -46,9 +46,10 @@ footer {
 
 /* Index Page Styles */
 #index-page {
-    background-image: url('TBD'); 
+    background-image: url('../images/decodingImage.gif'); 
     background-size: cover;
     background-attachment: fixed;
+    padding: 2rem;
 }
 
 #mass-encryptor h1 {
