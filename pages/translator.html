@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="content">
-        <h1>Translator</h1>
+        <h1 class="glow">Translator</h1>
         <h3>Type in your text, choose a cipher and encrypt away! Press the switch button if you would like to decrypt!</h3>
         <div>
             <table>
@@ -38,13 +38,15 @@
                     <th>Result</th>
                 </tr>
                 <tr>
-                    <td colspan="2"><textarea id="input" placeholder="Enter your text here..." rows="20" cols="50"></textarea></td>
+                    <td><textarea id="input" class="box" placeholder="Enter your text here..." rows="20" cols="50"></textarea></td>
                     <td></td>
+                    <td><textarea id="result" class="box" placeholder="Result here..." rows="20" cols="50"></textarea></td>
                 </tr>
             </table>
 
             <label for="shift">Caesar Shift:</label>
             <input type="number" min="1" max="25" placeholder="3" id="shift">
+            <br>
             <label for="keyword">Keyword:</label>
             <input type="text" placeholder="keyword" id="keyword">
         </div>
