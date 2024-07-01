@@ -140,6 +140,10 @@ footer {
     #mass-encryptor .description {
         font-size: 1.1rem;
     }
+    
+    table, tbody, tr, td {
+        display: block;
+    }
 }
 
 @media (max-width: 768px) {
@@ -174,6 +178,10 @@ footer {
     #mass-encryptor .description {
         font-size: 1rem;
     }
+
+    table, tbody, tr, td {
+        display: block;
+    }
 }
 
 @media (max-width: 576px) {
@@ -205,5 +213,9 @@ footer {
     #mass-encryptor button {
         padding: 0.7rem 1.5rem;
         font-size: 1rem;
+    }
+    
+    table, tbody, tr, td {
+        display: block;
     }
 }
