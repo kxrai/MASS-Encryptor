@@ -21,6 +21,11 @@ body {
     color: #00d1ff; /* Mix of electric blue and cyan */
 }
 
+.navbar .links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .navbar .links a {
     color: #00d1ff; /* Mix of electric blue and cyan */
     margin: 0 1rem;
@@ -133,6 +138,13 @@ footer {
 }
 
 /* Learn Page Styles */
+#learn .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
 .box {
     background-color: #111;
     border: 2px solid #00d1ff;
@@ -141,6 +153,7 @@ footer {
     padding: 20px;
     color: #e0e0e0;
     width: 100%;
+    max-width: 300px;
     transition: transform 0.3s ease;
 }
 
@@ -160,19 +173,28 @@ footer {
     color: #ccc;
 }
 
-/* Translator Page Styles */
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .navbar .links {
+        flex-direction: column;
+        width: 100%;
+    }
 
-/* Practice Page Styles */
+    .navbar .links a {
+        margin: 0.5rem 0;
+    }
 
+    #main-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-/* Support Page Styles */
-#support-page .box {
-    padding-left: 15px;
-    border: 2px solid #00d1ff;
-    box-shadow: 0 0 20px #00d1ff;
+    #learn .boxes {
+        flex-direction: column;
+    }
 }
-
-
-/* Contact Page Styles */
-
