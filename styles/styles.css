@@ -44,30 +44,14 @@ footer {
     border-top: 2px solid #00d1ff; /* Mix of electric blue and cyan */
 }
 
-/* Index Page Styles */
-#index-page {
-    background-image: url('../images/image_background.gif'); 
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-#mass-encryptor h1 {
+.glowing-text{
+    text-align: center;
     font-size: 3rem;
     color: #fff; /* White text */
     text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
 }
 
-#mass-encryptor .description {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    color: #ccc;
-}
 
-.text-background {
-    background-color: rgba(0, 0, 0, 0.8); /* Black background with some transparency */
-    padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-}
 
 #main-buttons {
     display: flex;
@@ -97,14 +81,44 @@ footer {
     box-shadow: 0 0 30px #00d1ff; /* Mix of electric blue and cyan */
 }
 
-/* About Page Styles */
-.glowing-text{
+.text-background {
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with some transparency */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.text-h1 {
     text-align: center;
+    margin-top: 20px;
+    color: #00d1ff;
+}
+
+.text-h2 {
     font-size: 3rem;
     color: #fff; /* White text */
     text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
 }
 
+/* Index Page Styles */
+#index-page {
+    background-image: url('../images/image_background.gif'); 
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#mass-encryptor h1 {
+    font-size: 3rem;
+    color: #fff; /* White text */
+    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
+}
+
+#mass-encryptor .description {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #ccc;
+}
+
+/* About Page Styles */
 #about-page {
     max-width: 800px;
     margin: 0 auto;
@@ -114,17 +128,14 @@ footer {
     background-color: #222;
 }
 
-#about-page h1 {
-    text-align: center;
-    margin-top: 20px;
-    color: #00d1ff;
-}
+/* Learn Page Styles */
 
-#about-page h2, #about-page h3 {
-    font-size: 3rem;
-    color: #fff; /* White text */
-    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
-}
+
+/* Translator Page Styles */
+
+
+/* Practice Page Styles */
+
 
 /* Support Page Styles */
 #support-page .box {
@@ -133,130 +144,6 @@ footer {
     box-shadow: 0 0 20px #00d1ff;
 }
 
-#support-page h1.glow {
-    color: #fff;
-    animation: glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #008080, 0 0 40px #008080, 0 0 50px #008080, 0 0 60px #008080, 0 0 70px #008080;
-    }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #00e0e0, 0 0 40px #00e0e0, 0 0 50px #00e0e0, 0 0 60px #00e0e0, 0 0 70px #00e0e0, 0 0 80px #00e0e0;
-    }
-}
 
 /* Contact Page Styles */
-#contact-page .form {
-    padding: 5px;
-    margin: 5px;
-    background-color: #111;
-    color: white;
-    border: 2px solid #00e0e0;
-}
 
-#contact-page .form:focus {
-    box-shadow: 0 0 20px #00e0e0;
-}
-
-/* Translator Page Styles */
-#translator-page .box {
-    padding-left: 15px;
-    border: 2px solid #00e0e0; 
-    box-shadow: 0 0 20px #00e0e0;
-}
-
-#translator-page th, #translator-page td {
-    padding: 10px;
-    border-color: white;
-}
-
-#translator-page select {
-    display: inline-block;
-    background-color: #111;
-    color: white;
-    font-family: monospace;
-    padding: 10px 15px;
-    box-shadow: 0px 5px 5px 0px rgba(141, 216, 245, 0.8);
-}
-
-#translator-page select option:checked {
-    background-color: cyan;
-    color: black;
-}
-
-/* Practice Page Styles */
-#practice-page .box {
-    padding-left: 15px;
-    border: 2px solid #00e0e0; 
-    box-shadow: 0 0 20px #00e0e0;
-}
-
-/* Responsive Design */
-@media (min-width: 1025px) {
-    /* Desktop screens */
-    .navbar .links a {
-        margin: 1rem;
-    }
-
-    main {
-        padding: 2rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    /* Tablet screens (landscape and portrait) */
-    .navbar .links a {
-        margin: 0.5rem;
-    }
-
-    main {
-        padding: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Tablet screens (portrait) */
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar .links {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navbar .links a {
-        margin: 0.5rem 0;
-        width: 100%;
-        text-align: left;
-        padding: 0.5rem 1rem;
-        border-bottom: 1px solid #00d1ff; /* Mix of electric blue and cyan */
-    }
-
-    main {
-        padding: 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    /* Mobile screens (landscape and portrait) */
-    .navbar .logo {
-        font-size: 1.2rem;
-    }
-
-    .navbar .links a {
-        margin: 0.5rem 0;
-        width: 100%;
-        text-align: left;
-        padding: 0.5rem 1rem;
-        border-bottom: 1px solid #00d1ff; /* Mix of electric blue and cyan */
-    }
-
-    main {
-        padding: 0.5rem;
-    }
-}
