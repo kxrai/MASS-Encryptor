@@ -53,8 +53,8 @@ footer {
 
 #mass-encryptor h1 {
     font-size: 3rem;
-    color: #00d1ff; /* Mix of electric blue and cyan */
-    text-shadow: 0 0 10px #00d1ff; /* Mix of electric blue and cyan */
+    color: #fff; /* White text */
+    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
 }
 
 #mass-encryptor .description {
