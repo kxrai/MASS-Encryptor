@@ -52,7 +52,7 @@ footer {
     border-top: 2px solid #00d1ff; /* Mix of electric blue and cyan */
 }
 
-.glowing-text{
+.glowing-text {
     text-align: center;
     font-size: 3rem;
     color: #fff; /* White text */
@@ -155,8 +155,8 @@ footer {
     background-color: #222;
 }
 
-/* Learn Page Styles */
-#learn .boxes {
+/* Learn and Practice Page Styles */
+#learn .boxes, #practice .boxes {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -185,24 +185,30 @@ footer {
     text-shadow: 0 0 10px #00d1ff;
 }
 
-.box p {
-    font-size: 1rem;
+.box ul, .box ol {
+    padding-left: 0;
+    list-style: none;
+}
+
+.box ul li, .box ol li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.box ul li::before, .box ol li::before {
+    content: '\2022'; /* Unicode for bullet point */
+    color: #00d1ff; /* Mix of electric blue and cyan */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.box p, .box ul, .box ol, .box h3, .box h4 {
+    font-size: 1.2rem;
     margin: 0.5rem 0;
     color: #ccc;
-}
-
-select {
-    display: inline-block;
-    background-color: #111;
-    color: white;
-    font-family: monospace;
-    padding: 10px 15px;
-    box-shadow: 0px 5px 5px 0px rgba(141, 216, 245, 0.8);
-}
-
-select option:checked {
-    background-color: cyan;
-    color: black;
+    line-height: 1.5;
 }
 
 /* Media Queries */
@@ -226,7 +232,7 @@ select option:checked {
         gap: 10px;
     }
 
-    #learn .boxes {
+    #learn .boxes, #practice .boxes {
         flex-direction: column;
     }
 
