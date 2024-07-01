@@ -8,6 +8,8 @@ body {
     padding: 0;
     color: #e0e0e0;
     background-color: #0a0a0a;
+    border: 2px solid #00d1ff; /* Add this line to include a blue border around the entire screen */
+    box-shadow: 0 0 20px #00d1ff; /* Add a blue glow effect around the border */
 }
 
 .navbar {
