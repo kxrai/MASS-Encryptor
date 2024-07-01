@@ -49,7 +49,7 @@ footer {
     background-image: url('../images/image_background.gif'); 
     background-size: cover;
     background-attachment: fixed;
-    padding: 20px;
+    padding: 10px 0;
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
