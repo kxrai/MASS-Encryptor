@@ -8,6 +8,8 @@ body {
     padding: 0;
     color: #e0e0e0;
     background-color: #0a0a0a;
+    border: 2px solid #00d1ff; /* Add this line to include a blue border around the entire screen */
+    box-shadow: 0 0 20px #00d1ff; /* Add a blue glow effect around the border */
 }
 
 .navbar {
@@ -116,6 +118,9 @@ footer {
     background-image: url('../images/image_background.gif'); 
     background-size: cover;
     background-attachment: fixed;
+    padding-left: 15px;
+    border: 2px solid #00d1ff;
+    box-shadow: 0 0 20px #00d1ff;
 }
 
 #mass-encryptor h1 {
@@ -136,16 +141,40 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-table {
-    width: 100%;
-    border-spacing: 20px;
-    margin: 20px 0;
-}
-
-th {
     text-align: center;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-row select, .form-row button, .form-row textarea {
+    margin: 0 10px;
+}
+
+.form-row textarea {
+    width: calc(50% - 20px);
+}
+
+.form-row .large-label {
+    font-size: 2rem;
 }
 
 textarea {
@@ -229,7 +258,7 @@ select option:checked {
     position: relative;
 }
 
-.box ul li::before {
+.box ul li::before, .box ol li::before {
     content: '\2022'; /* Unicode for bullet point */
     color: #00d1ff; /* Mix of electric blue and cyan */
     position: absolute;
@@ -269,7 +298,19 @@ select option:checked {
         flex-direction: column;
     }
 
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row textarea {
+        width: 100%;
+    }
+
     table, tbody, tr, td {
         display: block;
+    }
+
+    th, td {
+        text-align: center;
     }
 }
