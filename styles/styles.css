@@ -204,7 +204,7 @@ textarea {
     text-shadow: 0 0 10px #00d1ff;
 }
 
-.box ul, .box ol {
+.box ul {
     padding-left: 0;
     list-style: none;
 }
@@ -215,7 +215,7 @@ textarea {
     position: relative;
 }
 
-.box ul li::before, .box ol li::before {
+.box ul li::before {
     content: '\2022'; /* Unicode for bullet point */
     color: #00d1ff; /* Mix of electric blue and cyan */
     position: absolute;
