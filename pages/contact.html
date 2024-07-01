@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | MASS Encryption</title>
-    <!-- <link rel="stylesheet" href="../styles/styles.css"> -->
     <link rel="stylesheet" href="../styles/styles.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <script>
         function validateEmail(input) {
             var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -22,38 +21,42 @@
         }
     </script>
 </head>
-<body>
-    <div class="navbar">
-        <div class="logo">
-            <img src="../images/mass logo.png" alt="MASS Encryptor Logo" style="height: 200px;">
+<body id="pages">
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../images/mass logo.png" alt="MASS Encryptor Logo" style="height: 200px;">
+            </div>
+            <div class="links">
+                <a href="index.html">MASS Encryption</a>
+                <a href="about.html">About</a>
+                <a href="learn.html">Learn</a>
+                <a href="translator.html">Translator</a>
+                <a href="practice.html">Practice</a>
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
-        <div class="links">
-            <a href="index.html">MASS Encryption</a>
-            <a href="about.html">About</a>
-            <a href="learn.html">Learn</a>
-            <a href="translator.html">Translator</a>
-            <a href="practice.html">Practice</a>
-            <a href="support.html">Support</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </div>
-    <div class="box content">
         <h1 class="glowing-text">Contact Us</h1>
-        <form action="#" method="post" onsubmit="validateForm(event)">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" class="form" required><br><br>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="form" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address."><br><br>
-            
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" class="form" required></textarea><br><br>
-            
-            <input type="submit" value="Submit" class="cta-button">
-        </form>
-        <br>
-        <br>
-    </div>
+    </header>
+
+    <main class="centered-content">
+        <section id="contact" class="box content">
+            <form action="#" method="post" onsubmit="validateForm(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address."><br><br>
+                
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" class="form" required></textarea><br><br>
+                
+                <input type="submit" value="Submit" class="cta-button">
+            </form>
+        </section>
+    </main>
+
     <footer>
         <p>&copy; 2024 MASS Encryptor. All rights reserved.</p>
     </footer>
