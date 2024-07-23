@@ -6,6 +6,7 @@
     <title>Translator | MASS Encryptor</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <script src="../scripts/main.js"></script>
 </head>
 <body id="pages">
     <header>
@@ -32,11 +33,11 @@
             <table>
                 <tr>
                     <th>Encrypt &nbsp
-                        <select>
-                            <option>Caesar Cipher</option>
-                            <option>Atbash Cipher</option>
-                            <option>Keyword Cipher</option>
-                            <option>Morse Code</option>
+                        <select id="selectCipher">
+                            <option value="caesar">Caesar Cipher</option>
+                            <option value="atbash">Atbash Cipher</option>
+                            <option value="keyword">Keyword Cipher</option>
+                            <option value="morse">Morse Code</option>
                         </select>
                     </th>
                     <th><button class="cta-button"><img src="../images/switch.png" alt="switch button" width="35 px" height="35 px"></button></th>
@@ -57,7 +58,7 @@
             <input class="form" type="text" placeholder="keyword" id="keyword">
         </div>
         <br>
-        <button class="cta-button">Encrypt</button>
+        <button onclick="encrypt()" class="cta-button">Encrypt</button>
     </main>
 
     <footer>
