@@ -18,6 +18,25 @@ function encrypt() {
     }
 }
 
+function decrypt() {
+    var option = document.getElementById('selectCipher').value;
+    var text = document.getElementById('input').value;
+    if (option == "caesar") {
+        caesarDecrypt(text);
+    }
+    else if (option == "atbash") {
+        document.getElementById('result').textContent = atbashDecrypt(text);
+    }
+    else if (option == "keyword") {
+        var keyword = document.getElementById('keyword').value;
+        keywordDecrypt(text, keyword);
+    }
+    else if (option == "morse") {
+        morseDecrypt(text);
+    }
+}
+
+
 // Caesar Cipher
 function caesarEncrypt(inputText) {
     var shift = parseInt(document.getElementById('shift').value);
@@ -48,8 +67,45 @@ function caesarDecrypt(inputText, shift) {
 
 
 // Atbash Cipher
+function atbashEncrypt() {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
+    let encoded = inputText.split('').map(char => {
+        if (char.match(/[a-zA-Z]/)) {
+            let upperChar = char.toUpperCase();
+            const index = alphabet.indexOf(upperChar);
+            let transformedChar = reverseAlphabet[index];
+            if (char === char.toLowerCase()) {
+                transformedChar = transformedChar.toLowerCase();
+            }
+            return transformedChar;
+        }
+        return char;
+    }).join('');
+    console.log(inputText, encoded);
+    var result = document.getElementById('result');
+    result.textContent = encoded;
+}
 
-
+function atbashDecrypt() {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
+    let decoded = inputText.split('').map(char => {
+        if (char.match(/[a-zA-Z]/)) {
+            let upperChar = char.toUpperCase();
+            const index = reverseAlphabet.indexOf(upperChar);
+            let transformedChar = alphabet[index];
+            if (char === char.toLowerCase()) {
+                transformedChar = transformedChar.toLowerCase();
+            }
+            return transformedChar;
+        }
+        return char;
+    }).join('');
+    console.log(inputText, decoded);
+    var result = document.getElementById('result');
+    result.textContent = decoded;
+}
 // Keyword Cipher
 
 
