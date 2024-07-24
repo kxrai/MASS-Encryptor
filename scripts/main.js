@@ -104,7 +104,7 @@ function caesarDecrypt(inputText) {
 
 
 // Atbash Cipher
-function atbashEncrypt() {
+function atbashEncrypt(inputText) {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
     let encoded = inputText.split('').map(char => {
@@ -124,7 +124,7 @@ function atbashEncrypt() {
     result.textContent = encoded;
 }
 
-function atbashDecrypt() {
+function atbashDecrypt(inputText) {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
     let decoded = inputText.split('').map(char => {
