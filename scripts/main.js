@@ -104,8 +104,45 @@ function caesarDecrypt(inputText) {
 
 
 // Atbash Cipher
+function atbashEncrypt(inputText) {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
+    let encoded = inputText.split('').map(char => {
+        if (char.match(/[a-zA-Z]/)) {
+            let upperChar = char.toUpperCase();
+            const index = alphabet.indexOf(upperChar);
+            let transformedChar = reverseAlphabet[index];
+            if (char === char.toLowerCase()) {
+                transformedChar = transformedChar.toLowerCase();
+            }
+            return transformedChar;
+        }
+        return char;
+    }).join('');
+    console.log(inputText, encoded);
+    var result = document.getElementById('result');
+    result.textContent = encoded;
+}
 
-
+function atbashDecrypt(inputText) {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
+    let decoded = inputText.split('').map(char => {
+        if (char.match(/[a-zA-Z]/)) {
+            let upperChar = char.toUpperCase();
+            const index = reverseAlphabet.indexOf(upperChar);
+            let transformedChar = alphabet[index];
+            if (char === char.toLowerCase()) {
+                transformedChar = transformedChar.toLowerCase();
+            }
+            return transformedChar;
+        }
+        return char;
+    }).join('');
+    console.log(inputText, decoded);
+    var result = document.getElementById('result');
+    result.textContent = decoded;
+}
 // Keyword Cipher
 function generateCipherAlphabet(keyword) {
     const uniqueKeyword = Array.from(new Set(keyword.toUpperCase()));
