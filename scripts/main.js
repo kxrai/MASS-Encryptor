@@ -121,7 +121,7 @@ function keywordEncrypt(inputText) {
     let encoded = inputText.toUpperCase().split('').map(char => {
         if (alphabet.includes(char)) {
             return cipherAlphabet[alphabet.indexOf(char)];
-        }
+        } 
         return char;
     }).join('');
     console.log(inputText, keyword, encoded);
