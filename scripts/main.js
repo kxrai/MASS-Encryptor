@@ -182,3 +182,30 @@ function keywordDecrypt(inputText) {
 }
 
 // Morse Code
+const morseCode = {
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 
+    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', 
+    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', 
+    '9': '----.', '0': '-----', ' ': '/'
+};
+
+function morseEncrypt(inputText) {
+    let encoded = inputText.toUpperCase().split('').map(char => morseCode[char] || char).join(' ');
+    console.log(inputText, encoded);
+    var result = document.getElementById('result');
+    result.textContent = encoded;
+}
+
+function morseDecrypt(inputText) {
+    const morseToText = Object.keys(morseCode).reduce((obj, key) => {
+        obj[morseCode[key]] = key;
+        return obj;
+    }, {});
+    let decoded = inputText.split(' ').map(symbol => morseToText[symbol] || symbol).join('');
+    console.log(inputText, decoded);
+    var result = document.getElementById('result');
+    result.textContent = decoded;
+}
