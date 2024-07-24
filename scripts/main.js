@@ -107,6 +107,41 @@ function caesarDecrypt(inputText) {
 
 
 // Keyword Cipher
+function generateCipherAlphabet(keyword) {
+    const uniqueKeyword = Array.from(new Set(keyword.toUpperCase()));
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const cipherAlphabet = uniqueKeyword.join('') + alphabet.split('').filter(letter => !uniqueKeyword.includes(letter)).join('');
+    return cipherAlphabet;
+}
 
+function keywordEncrypt(inputText) {
+    var keyword = document.getElementById('keyword').value;
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const cipherAlphabet = generateCipherAlphabet(keyword);
+    let encoded = inputText.toUpperCase().split('').map(char => {
+        if (alphabet.includes(char)) {
+            return cipherAlphabet[alphabet.indexOf(char)];
+        }
+        return char;
+    }).join('');
+    console.log(inputText, keyword, encoded);
+    var result = document.getElementById('result');
+    result.textContent = encoded;
+}
+
+function keywordDecrypt(inputText) {
+    var keyword = document.getElementById('keyword').value;
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const cipherAlphabet = generateCipherAlphabet(keyword);
+    let decoded = inputText.toUpperCase().split('').map(char => {
+        if (cipherAlphabet.includes(char)) {
+            return alphabet[cipherAlphabet.indexOf(char)];
+        }
+        return char;
+    }).join('');
+    console.log(inputText, keyword, decoded);
+    var result = document.getElementById('result');
+    result.textContent = decoded;
+}
 
 // Morse Code
