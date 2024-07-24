@@ -104,9 +104,108 @@ function caesarDecrypt(inputText) {
 
 
 // Atbash Cipher
+function atbashEncrypt(inputText) {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
+    let encoded = inputText.split('').map(char => {
+        if (char.match(/[a-zA-Z]/)) {
+            let upperChar = char.toUpperCase();
+            const index = alphabet.indexOf(upperChar);
+            let transformedChar = reverseAlphabet[index];
+            if (char === char.toLowerCase()) {
+                transformedChar = transformedChar.toLowerCase();
+            }
+            return transformedChar;
+        }
+        return char;
+    }).join('');
+    console.log(inputText, encoded);
+    var result = document.getElementById('result');
+    result.textContent = encoded;
+}
 
-
+function atbashDecrypt(inputText) {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
+    let decoded = inputText.split('').map(char => {
+        if (char.match(/[a-zA-Z]/)) {
+            let upperChar = char.toUpperCase();
+            const index = reverseAlphabet.indexOf(upperChar);
+            let transformedChar = alphabet[index];
+            if (char === char.toLowerCase()) {
+                transformedChar = transformedChar.toLowerCase();
+            }
+            return transformedChar;
+        }
+        return char;
+    }).join('');
+    console.log(inputText, decoded);
+    var result = document.getElementById('result');
+    result.textContent = decoded;
+}
 // Keyword Cipher
+function generateCipherAlphabet(keyword) {
+    const uniqueKeyword = Array.from(new Set(keyword.toUpperCase()));
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const cipherAlphabet = uniqueKeyword.join('') + alphabet.split('').filter(letter => !uniqueKeyword.includes(letter)).join('');
+    return cipherAlphabet;
+}
 
+function keywordEncrypt(inputText) {
+    var keyword = document.getElementById('keyword').value;
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const cipherAlphabet = generateCipherAlphabet(keyword);
+    let encoded = inputText.toUpperCase().split('').map(char => {
+        if (alphabet.includes(char)) {
+            return cipherAlphabet[alphabet.indexOf(char)];
+        } 
+        return char;
+    }).join('');
+    console.log(inputText, keyword, encoded);
+    var result = document.getElementById('result');
+    result.textContent = encoded;
+}
+
+function keywordDecrypt(inputText) {
+    var keyword = document.getElementById('keyword').value;
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const cipherAlphabet = generateCipherAlphabet(keyword);
+    let decoded = inputText.toUpperCase().split('').map(char => {
+        if (cipherAlphabet.includes(char)) {
+            return alphabet[cipherAlphabet.indexOf(char)];
+        }
+        return char;
+    }).join('');
+    console.log(inputText, keyword, decoded);
+    var result = document.getElementById('result');
+    result.textContent = decoded;
+}
 
 // Morse Code
+const morseCode = {
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 
+    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', 
+    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', 
+    '9': '----.', '0': '-----', ' ': '/'
+};
+
+function morseEncrypt(inputText) {
+    let encoded = inputText.toUpperCase().split('').map(char => morseCode[char] || char).join(' ');
+    console.log(inputText, encoded);
+    var result = document.getElementById('result');
+    result.textContent = encoded;
+}
+
+function morseDecrypt(inputText) {
+    const morseToText = Object.keys(morseCode).reduce((obj, key) => {
+        obj[morseCode[key]] = key;
+        return obj;
+    }, {});
+    let decoded = inputText.split(' ').map(symbol => morseToText[symbol] || symbol).join('');
+    console.log(inputText, decoded);
+    var result = document.getElementById('result');
+    result.textContent = decoded;
+}
