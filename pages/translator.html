@@ -32,21 +32,21 @@
         <div>
             <table>
                 <tr>
-                    <th>Encrypt &nbsp
-                        <select id="selectCipher">
+                    <th><span id="left-heading">Decrypted Text</span>&nbsp
+                        <select id="select-cipher">
                             <option value="caesar">Caesar Cipher</option>
                             <option value="atbash">Atbash Cipher</option>
                             <option value="keyword">Keyword Cipher</option>
                             <option value="morse">Morse Code</option>
                         </select>
                     </th>
-                    <th><button class="cta-button"><img src="../images/switch.png" alt="switch button" width="35 px" height="35 px"></button></th>
-                    <th>Decryption</th>
+                    <th><button id="switch-button" class="cta-button"><img src="../images/switch.png" alt="switch button" width="35 px" height="35 px"></button></th>
+                    <th><span id="right-heading">Encrypted Text</span></th>
                 </tr>
                 <tr>
                     <td><textarea id="input" class="box form" placeholder="Enter your text here..." rows="20" cols="50"></textarea></td>
                     <td></td>
-                    <td><textarea id="result" class="box form" placeholder="Result here..." rows="20" cols="50"></textarea></td>
+                    <td><textarea id="result" class="box form" style="disabled: true;" placeholder="Result here..." rows="20" cols="50"></textarea></td>
                 </tr>
             </table>
 
@@ -58,7 +58,8 @@
             <input class="form" type="text" placeholder="keyword" id="keyword">
         </div>
         <br>
-        <button onclick="encrypt()" class="cta-button">Encrypt</button>
+        <button id="encrypt-button" class="cta-button">Encrypt</button>
+        <button id="decrypt-button" class="cta-button" style="display: none;">Decrypt</button>
     </main>
 
     <footer>
