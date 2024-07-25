@@ -155,10 +155,13 @@ function keywordEncrypt(inputText) {
     var keyword = document.getElementById('keyword').value;
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const cipherAlphabet = generateCipherAlphabet(keyword);
-    let encoded = inputText.toUpperCase().split('').map(char => {
-        if (alphabet.includes(char)) {
-            return cipherAlphabet[alphabet.indexOf(char)];
-        } 
+    let encoded = inputText.split('').map(char => {
+        const isUpperCase = char === char.toUpperCase();
+        const baseChar = char.toUpperCase();
+        if (alphabet.includes(baseChar)) {
+            const cipherChar = cipherAlphabet[alphabet.indexOf(baseChar)];
+            return isUpperCase ? cipherChar : cipherChar.toLowerCase();
+        }
         return char;
     }).join('');
     console.log(inputText, keyword, encoded);
@@ -170,9 +173,12 @@ function keywordDecrypt(inputText) {
     var keyword = document.getElementById('keyword').value;
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const cipherAlphabet = generateCipherAlphabet(keyword);
-    let decoded = inputText.toUpperCase().split('').map(char => {
-        if (cipherAlphabet.includes(char)) {
-            return alphabet[cipherAlphabet.indexOf(char)];
+    let decoded = inputText.split('').map(char => {
+        const isUpperCase = char === char.toUpperCase();
+        const baseChar = char.toUpperCase();
+        if (cipherAlphabet.includes(baseChar)) {
+            const originalChar = alphabet[cipherAlphabet.indexOf(baseChar)];
+            return isUpperCase ? originalChar : originalChar.toLowerCase();
         }
         return char;
     }).join('');
@@ -180,7 +186,6 @@ function keywordDecrypt(inputText) {
     var result = document.getElementById('result');
     result.textContent = decoded;
 }
-
 // Morse Code
 const morseCode = {
     'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 
