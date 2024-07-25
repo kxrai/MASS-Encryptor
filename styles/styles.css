@@ -314,3 +314,30 @@ select option:checked {
         text-align: center;
     }
 }
+
+.rating {
+    font-size: 3rem; /* Further increase the size of the stars */
+    color: #ccc; /* Default color of stars */
+    cursor: pointer;
+    user-select: none;
+}
+
+.rating .star:hover,
+.rating .star.active {
+    color: #00d1ff; /* Blue glow when hovered or active */
+    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff;
+}
+
+#submit-rating {
+    margin-top: 10px;
+    font-size: 1.5rem; /* Increase the size of the submit button */
+}
+
+details[open] summary {
+    outline: 2px solid #00d1ff; /* Blue glow for the opened FAQ section */
+    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff;
+}
+
+details summary {
+    cursor: pointer;
+}

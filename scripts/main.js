@@ -214,3 +214,30 @@ function morseDecrypt(inputText) {
     var result = document.getElementById('result');
     result.textContent = decoded;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.rating .star');
+    const submitButton = document.getElementById('submit-rating');
+    let currentRating = 0;
+
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            currentRating = parseInt(this.getAttribute('data-value'));
+            updateStars(currentRating);
+        });
+    });
+
+    submitButton.addEventListener('click', function() {
+        alert(`You have rated ${currentRating} stars!`);
+    });
+
+    function updateStars(rating) {
+        stars.forEach(star => {
+            if (parseInt(star.getAttribute('data-value')) <= rating) {
+                star.classList.add('active');
+            } else {
+                star.classList.remove('active');
+            }
+        });
+    }
+});
