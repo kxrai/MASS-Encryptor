@@ -241,3 +241,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+// formValidation.js
+function validateEmail(input) {
+    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(input);
+}
+
+function validateForm(event) {
+    var emailInput = document.getElementById('email');
+    if (!validateEmail(emailInput.value)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+    } else {
+        event.preventDefault(); // Prevent the default form submission
+        document.getElementById('thank-you-message').style.display = 'block'; // Show the thank you message
+        document.getElementById('contact-form').reset(); // Reset the form
+    }
+}
