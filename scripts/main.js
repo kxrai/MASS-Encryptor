@@ -8,6 +8,27 @@ document.addEventListener('DOMContentLoaded', function() {
     switchButton.addEventListener('click', flip);
     var resultArea = document.querySelector('#result');
     resultArea.disabled = true;
+    var options = document.getElementById('select-cipher');
+    options.addEventListener('change', function () {
+        if (options.value == "caesar") {
+            document.getElementById("shift").style.display = "inline-block";
+            document.getElementById("shift-label").style.display = "inline-block";
+            document.getElementById("keyword").style.display = "none";
+            document.getElementById("keyword-label").style.display = "none";
+        }
+        else if (options.value == "keyword") {
+            document.getElementById("shift").style.display = "none";
+            document.getElementById("shift-label").style.display = "none";
+            document.getElementById("keyword").style.display = "inline-block";
+            document.getElementById("keyword-label").style.display = "inline-block";
+        }
+        else {
+            document.getElementById("shift").style.display = "none";
+            document.getElementById("shift-label").style.display = "none";
+            document.getElementById("keyword").style.display = "none";
+            document.getElementById("keyword-label").style.display = "none";
+        }
+    });
   });
 
 //Call Correct Cipher Encryption
