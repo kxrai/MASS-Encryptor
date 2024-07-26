@@ -6,20 +6,7 @@
     <title>Contact | MASS Encryption</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <script>
-        function validateEmail(input) {
-            var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return regex.test(input);
-        }
-
-        function validateForm(event) {
-            var emailInput = document.getElementById('email');
-            if (!validateEmail(emailInput.value)) {
-                alert('Please enter a valid email address.');
-                event.preventDefault();
-            }
-        }
-    </script>
+    <script src="../scripts/main.js" defer></script>
 </head>
 <body id="pages">
     <header>
@@ -42,7 +29,7 @@
 
     <main class="centered-content">
         <section id="contact" class="box content">
-            <form action="#" method="post" onsubmit="validateForm(event)">
+            <form id="contact-form" action="#" method="post" onsubmit="validateForm(event)">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" class="form" required><br><br>
                 
@@ -54,6 +41,9 @@
                 
                 <input type="submit" value="Submit" class="cta-button">
             </form>
+            <div id="thank-you-message" style="display:none;">
+                <p>Thank you for your submission. We will get back to you shortly.</p>
+            </div>
         </section>
     </main>
 

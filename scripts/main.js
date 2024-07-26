@@ -176,10 +176,13 @@ function keywordEncrypt(inputText) {
     var keyword = document.getElementById('keyword').value;
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const cipherAlphabet = generateCipherAlphabet(keyword);
-    let encoded = inputText.toUpperCase().split('').map(char => {
-        if (alphabet.includes(char)) {
-            return cipherAlphabet[alphabet.indexOf(char)];
-        } 
+    let encoded = inputText.split('').map(char => {
+        const isUpperCase = char === char.toUpperCase();
+        const baseChar = char.toUpperCase();
+        if (alphabet.includes(baseChar)) {
+            const cipherChar = cipherAlphabet[alphabet.indexOf(baseChar)];
+            return isUpperCase ? cipherChar : cipherChar.toLowerCase();
+        }
         return char;
     }).join('');
     console.log(inputText, keyword, encoded);
@@ -191,9 +194,12 @@ function keywordDecrypt(inputText) {
     var keyword = document.getElementById('keyword').value;
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const cipherAlphabet = generateCipherAlphabet(keyword);
-    let decoded = inputText.toUpperCase().split('').map(char => {
-        if (cipherAlphabet.includes(char)) {
-            return alphabet[cipherAlphabet.indexOf(char)];
+    let decoded = inputText.split('').map(char => {
+        const isUpperCase = char === char.toUpperCase();
+        const baseChar = char.toUpperCase();
+        if (cipherAlphabet.includes(baseChar)) {
+            const originalChar = alphabet[cipherAlphabet.indexOf(baseChar)];
+            return isUpperCase ? originalChar : originalChar.toLowerCase();
         }
         return char;
     }).join('');
@@ -201,7 +207,6 @@ function keywordDecrypt(inputText) {
     var result = document.getElementById('result');
     result.textContent = decoded;
 }
-
 // Morse Code
 const morseCode = {
     'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 
@@ -229,4 +234,50 @@ function morseDecrypt(inputText) {
     console.log(inputText, decoded);
     var result = document.getElementById('result');
     result.textContent = decoded;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.rating .star');
+    const submitButton = document.getElementById('submit-rating');
+    let currentRating = 0;
+
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            currentRating = parseInt(this.getAttribute('data-value'));
+            updateStars(currentRating);
+        });
+    });
+
+    submitButton.addEventListener('click', function() {
+        alert(`You have rated ${currentRating} stars!`);
+    });
+
+    function updateStars(rating) {
+        stars.forEach(star => {
+            if (parseInt(star.getAttribute('data-value')) <= rating) {
+                star.classList.add('active');
+            } else {
+                star.classList.remove('active');
+            }
+        });
+    }
+});
+
+
+// formValidation.js
+function validateEmail(input) {
+    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(input);
+}
+
+function validateForm(event) {
+    var emailInput = document.getElementById('email');
+    if (!validateEmail(emailInput.value)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+    } else {
+        event.preventDefault(); // Prevent the default form submission
+        document.getElementById('thank-you-message').style.display = 'block'; // Show the thank you message
+        document.getElementById('contact-form').reset(); // Reset the form
+    }
 }
