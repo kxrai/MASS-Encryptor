@@ -254,6 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
     submitButton.addEventListener('click', function() {
         let message = document.createElement('p');
         message.innerHTML = `You have rated ${currentRating} stars!`;
+        message.classList.add("glowing-text")
         let notifyArea = document.getElementById('notification');
         notifyArea.appendChild(message);
         setTimeout(function(){
