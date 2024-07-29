@@ -316,3 +316,73 @@ function validateForm(event) {
         }, 1000);
     }
 }
+
+
+
+// Form Validation for Account Page
+document.getElementById('accountForm').addEventListener('submit', function(event) {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+    var phone = document.getElementById('phone').value;
+    var postalCode = document.getElementById('postalCode').value;
+    var creditCard = document.getElementById('creditCard').value;
+
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+    } else if (!validatePassword(password)) {
+        alert('Password must be at least 8 characters long and contain at least one number and one letter.');
+        event.preventDefault();
+    } else if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        event.preventDefault();
+    } else if (!validatePhone(phone)) {
+        alert('Please enter a valid phone number.');
+        event.preventDefault();
+    } else if (!validatePostalCode(postalCode)) {
+        alert('Please enter a valid postal code.');
+        event.preventDefault();
+    } else if (!validateCreditCard(creditCard)) {
+        alert('Please enter a valid credit card number.');
+        event.preventDefault();
+    }
+});
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    var email = document.getElementById('loginEmail').value;
+    var password = document.getElementById('loginPassword').value;
+
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+    } else if (password.trim() === "") {
+        alert('Please enter your password.');
+        event.preventDefault();
+    }
+});
+
+function validateEmail(email) {
+    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+}
+
+function validatePassword(password) {
+    var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    return regex.test(password);
+}
+
+function validatePhone(phone) {
+    var regex = /^[0-9]{10}$/;
+    return regex.test(phone);
+}
+
+function validatePostalCode(postalCode) {
+    var regex = /^[A-Za-z0-9]{6}$/;
+    return regex.test(postalCode);
+}
+
+function validateCreditCard(creditCard) {
+    var regex = /^[0-9]{16}$/;
+    return regex.test(creditCard);
+}

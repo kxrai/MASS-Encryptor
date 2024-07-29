@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account | MASS Encryptor</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <script src="../scripts/main.js" defer></script>
+</head>
+<body id="pages">
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/mass logo.png" alt="MASS Encryptor Logo" style="height: 200px;">
+            </div>
+            <div class="links">
+                <a href="index.html">MASS Encryption</a>
+                <a href="about.html">About</a>
+                <a href="learn.html">Learn</a>
+                <a href="translator.html">Translator</a>
+                <a href="practice.html">Practice</a>
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <h1 class="glowing-text">Account</h1>
+    </header>
+
+    <main class="content">
+        <div class="form-wrapper">
+            <div class="form-container">
+                <h2>Create Account</h2>
+                <form id="accountForm" action="#" method="post">
+                    <div class="form-row">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" class="form" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" class="form" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" class="form" required pattern="[0-9]{10}">
+                    </div>
+                    <div class="form-row">
+                        <label for="postalCode">Postal Code:</label>
+                        <input type="text" id="postalCode" name="postalCode" class="form" required pattern="[A-Za-z0-9]{6}">
+                    </div>
+                    <div class="form-row">
+                        <label for="creditCard">Credit Card:</label>
+                        <input type="text" id="creditCard" name="creditCard" class="form" required pattern="[0-9]{16}">
+                    </div>
+                    <div class="form-row">
+                        <input type="submit" value="Create Account" class="cta-button">
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-container">
+                <h2>Login</h2>
+                <form id="loginForm" action="#" method="post">
+                    <div class="form-row">
+                        <label for="loginEmail">Email:</label>
+                        <input type="email" id="loginEmail" name="loginEmail" class="form" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" name="loginPassword" class="form" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="submit" value="Login" class="cta-button">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MASS Encryptor. All rights reserved.</p>
+    </footer>
+</body>
+</html>
