@@ -252,13 +252,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     submitButton.addEventListener('click', function() {
+        let notifyArea = document.getElementById('notification');
         let message = document.createElement('p');
+        let seconds = document.createElement('p');
         message.innerHTML = `You have rated ${currentRating} stars!`;
         message.classList.add("glowing-text")
-        let notifyArea = document.getElementById('notification');
+        seconds.innerHTML = "5";
+        
         notifyArea.appendChild(message);
+        notifyArea.appendChild(seconds);
         setTimeout(function(){
-            notifyArea.removeChild(message);}, 5000);
+            notifyArea.removeChild(message);
+            notifyArea.removeChild(seconds);}, 5000);
+        let count = 5;
+        const countdown = setInterval(function(){
+            count -= 1;
+            seconds.innerHTML = count;
+            if(count == 0){
+                clearInterval(countdown);
+            }
+        }, 1000);
     });
 
     function updateStars(rating) {
@@ -291,5 +304,15 @@ function validateForm(event) {
             document.getElementById('contact-form').reset(); // Reset the form
             document.getElementById('thank-you-message').style.display = 'none'; // Hide the thank you message
         }, 5000);
+        let seconds = document.getElementById('countdown');
+        seconds.innerHTML = 5;
+        let count = 5;
+        const countdown = setInterval(function(){
+            count -= 1;
+            seconds.innerHTML = count;
+            if(count == 0){
+                clearInterval(countdown);
+            }
+        }, 1000);
     }
 }
