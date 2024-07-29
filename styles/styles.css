@@ -411,9 +411,10 @@ details summary {
 
 
 
-/* Account Page */
+/* Specific Styles for Translator Page */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+/* General Styles */
 body {
     font-family: 'VT323', monospace;
     margin: 0;
