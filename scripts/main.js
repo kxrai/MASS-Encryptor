@@ -9,14 +9,16 @@ document.addEventListener('DOMContentLoaded', function() {
     var resultArea = document.querySelector('#result');
     resultArea.disabled = true;
     var options = document.getElementById('select-cipher');
-    options.addEventListener('change', function () {
-        if (options.value == "caesar") {
+    options.addEventListener('change', function (event) {
+        const selection = event.target;
+        const value = selection.value;
+        if (value == "caesar") {
             document.getElementById("shift").style.display = "inline-block";
             document.getElementById("shift-label").style.display = "inline-block";
             document.getElementById("keyword").style.display = "none";
             document.getElementById("keyword-label").style.display = "none";
         }
-        else if (options.value == "keyword") {
+        else if (value == "keyword") {
             document.getElementById("shift").style.display = "none";
             document.getElementById("shift-label").style.display = "none";
             document.getElementById("keyword").style.display = "inline-block";
@@ -236,6 +238,7 @@ function morseDecrypt(inputText) {
     result.textContent = decoded;
 }
 
+// Support Page Star Rating 
 document.addEventListener('DOMContentLoaded', function() {
     const stars = document.querySelectorAll('.rating .star');
     const submitButton = document.getElementById('submit-rating');
@@ -249,7 +252,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     submitButton.addEventListener('click', function() {
-        alert(`You have rated ${currentRating} stars!`);
+        let message = document.createElement('p');
+        message.innerHTML = `You have rated ${currentRating} stars!`;
+        let notifyArea = document.getElementById('notification');
+        notifyArea.appendChild(message);
+        setTimeout(function(){
+            notifyArea.removeChild(message);}, 5000);
     });
 
     function updateStars(rating) {
@@ -264,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// formValidation.js
+// Form Validation for Contact Page
 function validateEmail(input) {
     var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return regex.test(input);
@@ -278,6 +286,9 @@ function validateForm(event) {
     } else {
         event.preventDefault(); // Prevent the default form submission
         document.getElementById('thank-you-message').style.display = 'block'; // Show the thank you message
-        document.getElementById('contact-form').reset(); // Reset the form
+        setTimeout(function() {
+            document.getElementById('contact-form').reset(); // Reset the form
+            document.getElementById('thank-you-message').style.display = 'none'; // Hide the thank you message
+        }, 5000);
     }
 }
