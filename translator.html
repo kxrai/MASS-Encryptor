@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <script src="../scripts/main.js"></script>
 </head>
-<body id="pages">
+<body id="pages" class="translator-page">
     <header>
         <div class="navbar">
             <div class="logo">
@@ -29,37 +29,31 @@
 
     <main class="content">
         <h3>Type in your text, choose a cipher and encrypt away! Press the switch button if you would like to decrypt!</h3>
-        <div>
-            <table>
-                <tr>
-                    <th><span id="left-heading">Decrypted Text</span>&nbsp
-                        <select id="select-cipher">
-                            <option value="caesar">Caesar Cipher</option>
-                            <option value="atbash">Atbash Cipher</option>
-                            <option value="keyword">Keyword Cipher</option>
-                            <option value="morse">Morse Code</option>
-                        </select>
-                    </th>
-                    <th><button id="switch-button" class="cta-button"><img src="../images/switch.png" alt="switch button" width="35 px" height="35 px"></button></th>
-                    <th><span id="right-heading">Encrypted Text</span></th>
-                </tr>
-                <tr>
-                    <td><textarea id="input" class="box form" placeholder="Enter your text here..." rows="20" cols="50"></textarea></td>
-                    <td></td>
-                    <td><textarea id="result" class="box form" placeholder="Result here..." rows="20" cols="50"></textarea></td>
-                </tr>
-            </table>
-
-            <label for="shift" id="shift-label">Caesar Shift:</label>
-            <input class="form" type="number" min="1" max="25" placeholder="3" id="shift">
-            <br>
-            <br>
-            <label for="keyword" id="keyword-label" style="display: none;">Keyword:</label>
-            <input class="form" type="text" placeholder="keyword" id="keyword" style="display: none;">
+        <div class="form-container">
+            <div class="form-row">
+                <span id="left-heading" class="title-text">Decrypted Text</span>
+                <textarea id="input" class="box form text-box" placeholder="Enter your text here..." rows="10"></textarea>
+            </div>
+            <div class="form-row switch-button-container">
+                <button id="switch-button" class="cta-button"><img src="../images/switch.png" alt="switch button" width="35px" height="35px"></button>
+            </div>
+            <div class="form-row">
+                <span id="right-heading" class="title-text">Encrypted Text</span>
+                <textarea id="result" class="box form text-box" placeholder="Result here..." rows="10"></textarea>
+            </div>
         </div>
-        <br>
-        <button id="encrypt-button" class="cta-button">Encrypt</button>
-        <button id="decrypt-button" class="cta-button" style="display: none;">Decrypt</button>
+        <div class="form-row">
+            <label for="shift">Caesar Shift:</label>
+            <input class="form" type="number" min="1" max="25" placeholder="3" id="shift">
+        </div>
+        <div class="form-row">
+            <label for="keyword">Keyword:</label>
+            <input class="form" type="text" placeholder="keyword" id="keyword">
+        </div>
+        <div class="form-row">
+            <button id="encrypt-button" class="cta-button">Encrypt</button>
+            <button id="decrypt-button" class="cta-button" style="display: none;">Decrypt</button>
+        </div>
     </main>
 
     <footer>
