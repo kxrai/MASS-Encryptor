@@ -411,145 +411,49 @@ details summary {
 
 
 
-/* Specific Styles for Translator Page */
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
-/* General Styles */
-body {
-    font-family: 'VT323', monospace;
-    margin: 0;
-    padding: 0;
-    color: #e0e0e0;
-    background-color: #0a0a0a;
-    border: 2px solid #00d1ff; /* Add this line to include a blue border around the entire screen */
-    box-shadow: 0 0 20px #00d1ff; /* Add a blue glow effect around the border */
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #111;
-    padding: 1rem;
-    border-bottom: 2px solid #00d1ff; /* Mix of electric blue and cyan */
-}
-
-.navbar .logo {
-    font-size: 1.5rem;
-    color: #00d1ff; /* Mix of electric blue and cyan */
-}
-
-.navbar .links {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.navbar .links a {
-    color: #00d1ff; /* Mix of electric blue and cyan */
-    margin: 0 1rem;
-    text-decoration: none;
-}
-
-.navbar .links a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 2rem;
-    text-align: center;
-}
-
-footer {
-    background-color: #111;
-    color: #00d1ff; /* Mix of electric blue and cyan */
-    text-align: center;
-    padding: 1rem;
-    border-top: 2px solid #00d1ff; /* Mix of electric blue and cyan */
-}
-
-.glowing-text {
-    text-align: center;
-    font-size: 3rem;
-    color: #fff; /* White text */
-    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff; /* Blue glow */
-}
-
-#pages {
-    padding-left: 15px;
-    border: 2px solid #00d1ff;
-    box-shadow: 0 0 20px #00d1ff;
-}
-
-.content {
-    margin: 20px auto;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.form-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    width: 100%;
-}
-
-.form-container {
-    width: 100%;
-    max-width: 500px;
+/* Account Page */
+#account-page {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #111;
+    border: 1px solid #00d1ff;
     border-radius: 10px;
-    box-shadow: 0 0 20px #00e0e0;
-    margin-bottom: 20px;
+    background-color: #222;
 }
 
-.form-row {
+
+#login-create-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    width: 100%;
+    gap: 40px; 
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.form-row label {
-    margin-bottom: 5px;
-}
-
-.form {
-    padding: 10px;
-    margin: 5px 0;
-    width: 100%;
-    background-color: #0a0a0a;
-    color: white;
-    border: 2px solid #00e0e0;
-    border-radius: 5px;
-}
-
-.form:focus {
-    box-shadow: 0 0 20px #00e0e0;
-}
-
-.cta-button {
-    font-family: 'VT323', monospace;
+.account-section {
+    flex: 1;
     background-color: #111;
-    color: #00d1ff; /* Mix of electric blue and cyan */
-    padding: 0.8rem 1.5rem;
-    border: none;
-    cursor: pointer;
-    margin: 0.5rem;
-    transition: all 0.3s ease;
-    border-radius: 25px;
-    font-size: 1rem;
-    box-shadow: 0 0 20px #00d1ff; /* Mix of electric blue and cyan */
-    text-decoration: none;
-    width: 100%;
+    border: 2px solid #00d1ff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00d1ff;
+    padding: 20px;
+    color: #e0e0e0;
+    max-width: 400px;
+    transition: transform 0.3s ease;
 }
 
-.cta-button:hover {
-    background-color: #00d1ff; /* Mix of electric blue and cyan */
-    color: #111;
-    box-shadow: 0 0 30px #00d1ff; /* Mix of electric blue and cyan */
+.account-section:hover {
+    transform: scale(1.05);
+}
+
+.account-section h2 {
+    font-size: 2rem;
+    color: #00d1ff; /* Mix of electric blue and cyan */
+    text-shadow: 0 0 10px #00d1ff;
+}
+
+.account-section p, .account-section ul, .account-section ol, .account-section h3, .account-section h4 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #ccc;
+    line-height: 1.5;
 }
