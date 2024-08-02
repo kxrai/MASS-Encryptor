@@ -165,7 +165,6 @@ footer {
     box-sizing: border-box;
 }
 
-
 .form-row {
     display: flex;
     flex-direction: column;
@@ -345,6 +344,32 @@ select option:checked {
     .box {
         width: 90%; /* Ensure the boxes don't go off the page */
         margin: 10px auto; /* Add margin for spacing */
+    }
+
+    body, main, footer, .glowing-text, .content, .form-select, .form-row, .form-container, .title-text, .text-h1, .text-h2, .box p, .box ul, .box ol, .box h3, .box h4 {
+        font-size: 1.5rem; /* Increase the base font size */
+    }
+
+    .glowing-text {
+        font-size: 2rem; /* Adjust the glowing text size */
+    }
+
+    .text-h2 {
+        font-size: 2rem; /* Adjust the h2 text size */
+    }
+}
+
+@media (min-width: 769px) {
+    body, main, footer, .glowing-text, .content, .form-select, .form-row, .form-container, .title-text, .text-h1, .text-h2, .box p, .box ul, .box ol, .box h3, .box h4 {
+        font-size: 2rem; /* Increase the base font size for desktop */
+    }
+
+    .glowing-text {
+        font-size: 4rem; /* Adjust the glowing text size */
+    }
+
+    .text-h2 {
+        font-size: 3.5rem; /* Adjust the h2 text size */
     }
 }
 
