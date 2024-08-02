@@ -124,12 +124,13 @@ footer {
     padding: 0.8rem 1.5rem; 
     border: none;
     cursor: pointer;
-    margin: 0.5rem;
+    margin: auto;
     transition: all 0.3s ease;
     border-radius: 25px; 
     font-size: 1rem; 
     box-shadow: 0 0 20px #00d1ff;
     text-decoration: none;
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -511,4 +512,14 @@ img, video {
         padding-right: 10px;
         white-space: nowrap;
     }
+}
+
+#notification {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.glowing-text {
+    color: #00d1ff;
+    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff;
 }

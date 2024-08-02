@@ -244,3 +244,35 @@ function morseDecrypt(inputText) {
     const decoded = inputText.split(' ').map(symbol => morseToText[symbol] || symbol).join('');
     document.getElementById('result').textContent = decoded;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let notifyArea = document.getElementById('notification');
+            let message = document.createElement('p');
+            let seconds = document.createElement('p');
+            message.innerHTML = "Thank you for your message. We'll get back to you soon!";
+            message.classList.add("glowing-text");
+            seconds.innerHTML = "5";
+            
+            notifyArea.appendChild(message);
+            notifyArea.appendChild(seconds);
+            
+            setTimeout(() => {
+                notifyArea.removeChild(message);
+                notifyArea.removeChild(seconds);
+                contactForm.reset();
+            }, 5000);
+            
+            let count = 5;
+            const countdown = setInterval(() => {
+                count -= 1;
+                seconds.innerHTML = count;
+                if(count === 0) clearInterval(countdown);
+            }, 1000);
+        });
+    }
+});
