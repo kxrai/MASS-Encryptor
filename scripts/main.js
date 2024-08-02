@@ -1,245 +1,37 @@
-//Event Listeners
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Encryption/Decryption functionality
     const encryptButton = document.querySelector('#encrypt-button');
-    encryptButton.addEventListener('click', encrypt);
     const decryptButton = document.querySelector('#decrypt-button');
-    decryptButton.addEventListener('click', decrypt);
     const switchButton = document.querySelector('#switch-button');
-    switchButton.addEventListener('click', flip);
-    var resultArea = document.querySelector('#result');
-    resultArea.disabled = true;
-    var options = document.getElementById('select-cipher');
-    options.addEventListener('change', function (event) {
-        const selection = event.target;
-        const value = selection.value;
-        if (value == "caesar") {
-            document.getElementById("shift").style.display = "inline-block";
-            document.getElementById("shift-label").style.display = "inline-block";
-            document.getElementById("keyword").style.display = "none";
-            document.getElementById("keyword-label").style.display = "none";
-        }
-        else if (value == "keyword") {
-            document.getElementById("shift").style.display = "none";
-            document.getElementById("shift-label").style.display = "none";
-            document.getElementById("keyword").style.display = "inline-block";
-            document.getElementById("keyword-label").style.display = "inline-block";
-        }
-        else {
-            document.getElementById("shift").style.display = "none";
-            document.getElementById("shift-label").style.display = "none";
-            document.getElementById("keyword").style.display = "none";
-            document.getElementById("keyword-label").style.display = "none";
-        }
-    });
-  });
+    const resultArea = document.querySelector('#result');
+    const options = document.getElementById('select-cipher');
 
-//Call Correct Cipher Encryption
-function encrypt() {
-    let option = document.getElementById('select-cipher').value;
-    let text = document.getElementById('input').value;
-    if (option == "caesar") {
-        caesarEncrypt(text);
+    if (encryptButton) encryptButton.addEventListener('click', encrypt);
+    if (decryptButton) decryptButton.addEventListener('click', decrypt);
+    if (switchButton) switchButton.addEventListener('click', flip);
+    if (resultArea) resultArea.disabled = true;
+
+    if (options) {
+        options.addEventListener('change', function (event) {
+            const value = event.target.value;
+            document.getElementById("shift").style.display = value === "caesar" ? "inline-block" : "none";
+            document.getElementById("shift-label").style.display = value === "caesar" ? "inline-block" : "none";
+            document.getElementById("keyword").style.display = value === "keyword" ? "inline-block" : "none";
+            document.getElementById("keyword-label").style.display = value === "keyword" ? "inline-block" : "none";
+        });
     }
-    else if (option == "atbash") {
-        atbashEncrypt(text);
-    }
-    else if (option == "keyword") {
-        keywordEncrypt(text);
-    }
-    else if (option == "morse") {
-        morseEncrypt(text);
-    }
-}
 
-//Call Correct Cipher Decryption
-function decrypt() {
-    let option = document.getElementById('select-cipher').value;
-    let text = document.getElementById('input').value;
-    if (option == "caesar") {
-        caesarDecrypt(text);
-    }
-    else if (option == "atbash") {
-        atbashDecrypt(text);
-    }
-    else if (option == "keyword") {
-        keywordDecrypt(text);
-    }
-    else if (option == "morse") {
-        morseDecrypt(text);
-    }
-}
-
-//Switch between encrypt and decrypt
-function flip() {
-    let leftHeading = document.getElementById("left-heading");
-    leftTitle = leftHeading.textContent;
-    let rightHeading = document.getElementById("right-heading");
-    rightTitle = rightHeading.textContent;
-
-    leftHeading.innerHTML = rightTitle;
-    rightHeading.innerHTML = leftTitle;
-
-    document.getElementById('result').innerHTML = "";
-
-    let encryptButton = document.getElementById('encrypt-button');
-    let decryptButton = document.getElementById('decrypt-button');
-
-    if (encryptButton.style.display == "none"){
-        encryptButton.style.display = "block";
-        decryptButton.style.display = "none";
-    }
-    else {
-        encryptButton.style.display = "none";
-        decryptButton.style.display = "block";
-    }
-    
-}
-
-// Caesar Cipher
-function caesarEncrypt(inputText) {
-    var shift = parseInt(document.getElementById('shift').value);
-    let encoded = inputText.split('').map(char => {
-        if (char.match(/[a-z]/i)) {
-            let code = char.charCodeAt();
-            let base = (code >= 65 && code <= 90) ? 65 : 97;
-            return String.fromCharCode(((code - base + shift) % 26) + base);
-        }
-        return char;
-    }).join('');
-    console.log(inputText, shift, encoded);
-    var result = document.getElementById('result');
-    result.textContent = encoded;
-}
-function caesarDecrypt(inputText) {
-    var shift = parseInt(document.getElementById('shift').value);
-    let decoded = inputText.split('').map(char => {
-        if (char.match(/[a-z]/i)) {
-            let code = char.charCodeAt();
-            let base = (code >= 65 && code <= 90) ? 65 : 97;
-            return String.fromCharCode(((code - base - shift + 26) % 26) + base);
-        }
-        return char;
-    }).join('');
-    console.log(inputText, shift, decoded);
-    var result = document.getElementById('result');
-    result.textContent = decoded;
-}
-
-
-// Atbash Cipher
-function atbashEncrypt(inputText) {
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
-    let encoded = inputText.split('').map(char => {
-        if (char.match(/[a-zA-Z]/)) {
-            let upperChar = char.toUpperCase();
-            const index = alphabet.indexOf(upperChar);
-            let transformedChar = reverseAlphabet[index];
-            if (char === char.toLowerCase()) {
-                transformedChar = transformedChar.toLowerCase();
-            }
-            return transformedChar;
-        }
-        return char;
-    }).join('');
-    console.log(inputText, encoded);
-    var result = document.getElementById('result');
-    result.textContent = encoded;
-}
-
-function atbashDecrypt(inputText) {
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
-    let decoded = inputText.split('').map(char => {
-        if (char.match(/[a-zA-Z]/)) {
-            let upperChar = char.toUpperCase();
-            const index = reverseAlphabet.indexOf(upperChar);
-            let transformedChar = alphabet[index];
-            if (char === char.toLowerCase()) {
-                transformedChar = transformedChar.toLowerCase();
-            }
-            return transformedChar;
-        }
-        return char;
-    }).join('');
-    console.log(inputText, decoded);
-    var result = document.getElementById('result');
-    result.textContent = decoded;
-}
-// Keyword Cipher
-function generateCipherAlphabet(keyword) {
-    const uniqueKeyword = Array.from(new Set(keyword.toUpperCase()));
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const cipherAlphabet = uniqueKeyword.join('') + alphabet.split('').filter(letter => !uniqueKeyword.includes(letter)).join('');
-    return cipherAlphabet;
-}
-
-function keywordEncrypt(inputText) {
-    var keyword = document.getElementById('keyword').value;
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const cipherAlphabet = generateCipherAlphabet(keyword);
-    let encoded = inputText.split('').map(char => {
-        const isUpperCase = char === char.toUpperCase();
-        const baseChar = char.toUpperCase();
-        if (alphabet.includes(baseChar)) {
-            const cipherChar = cipherAlphabet[alphabet.indexOf(baseChar)];
-            return isUpperCase ? cipherChar : cipherChar.toLowerCase();
-        }
-        return char;
-    }).join('');
-    console.log(inputText, keyword, encoded);
-    var result = document.getElementById('result');
-    result.textContent = encoded;
-}
-
-function keywordDecrypt(inputText) {
-    var keyword = document.getElementById('keyword').value;
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const cipherAlphabet = generateCipherAlphabet(keyword);
-    let decoded = inputText.split('').map(char => {
-        const isUpperCase = char === char.toUpperCase();
-        const baseChar = char.toUpperCase();
-        if (cipherAlphabet.includes(baseChar)) {
-            const originalChar = alphabet[cipherAlphabet.indexOf(baseChar)];
-            return isUpperCase ? originalChar : originalChar.toLowerCase();
-        }
-        return char;
-    }).join('');
-    console.log(inputText, keyword, decoded);
-    var result = document.getElementById('result');
-    result.textContent = decoded;
-}
-// Morse Code
-const morseCode = {
-    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 
-    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 
-    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 
-    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 
-    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', 
-    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', 
-    '9': '----.', '0': '-----', ' ': '/'
-};
-
-function morseEncrypt(inputText) {
-    let encoded = inputText.toUpperCase().split('').map(char => morseCode[char] || char).join(' ');
-    console.log(inputText, encoded);
-    var result = document.getElementById('result');
-    result.textContent = encoded;
-}
-
-function morseDecrypt(inputText) {
-    const morseToText = Object.keys(morseCode).reduce((obj, key) => {
-        obj[morseCode[key]] = key;
-        return obj;
-    }, {});
-    let decoded = inputText.split(' ').map(symbol => morseToText[symbol] || symbol).join('');
-    console.log(inputText, decoded);
-    var result = document.getElementById('result');
-    result.textContent = decoded;
-}
-
-// Support Page Star Rating 
-document.addEventListener('DOMContentLoaded', function() {
+    // Support Page Star Rating 
     const stars = document.querySelectorAll('.rating .star');
     const submitButton = document.getElementById('submit-rating');
     let currentRating = 0;
@@ -251,138 +43,204 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    submitButton.addEventListener('click', function() {
-        let notifyArea = document.getElementById('notification');
-        let message = document.createElement('p');
-        let seconds = document.createElement('p');
-        message.innerHTML = `You have rated ${currentRating} stars!`;
-        message.classList.add("glowing-text")
-        seconds.innerHTML = "5";
-        
-        notifyArea.appendChild(message);
-        notifyArea.appendChild(seconds);
-        setTimeout(function(){
-            notifyArea.removeChild(message);
-            notifyArea.removeChild(seconds);}, 5000);
-        let count = 5;
-        const countdown = setInterval(function(){
-            count -= 1;
-            seconds.innerHTML = count;
-            if(count == 0){
-                clearInterval(countdown);
-            }
-        }, 1000);
-    });
+    if (submitButton) {
+        submitButton.addEventListener('click', function() {
+            let notifyArea = document.getElementById('notification');
+            let message = document.createElement('p');
+            let seconds = document.createElement('p');
+            message.innerHTML = `You have rated ${currentRating} stars!`;
+            message.classList.add("glowing-text");
+            seconds.innerHTML = "5";
+            
+            notifyArea.appendChild(message);
+            notifyArea.appendChild(seconds);
+            setTimeout(() => {
+                notifyArea.removeChild(message);
+                notifyArea.removeChild(seconds);
+            }, 5000);
+            
+            let count = 5;
+            const countdown = setInterval(() => {
+                count -= 1;
+                seconds.innerHTML = count;
+                if(count === 0) clearInterval(countdown);
+            }, 1000);
+        });
+    }
 
-    function updateStars(rating) {
-        stars.forEach(star => {
-            if (parseInt(star.getAttribute('data-value')) <= rating) {
-                star.classList.add('active');
-            } else {
-                star.classList.remove('active');
-            }
+    // Account functionality
+    const accountForm = document.getElementById('accountForm');
+    if (accountForm) {
+        accountForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Here you would typically send this data to a server
+            console.log('Account creation attempted');
+            alert('Account created successfully!');
+            this.reset();
+        });
+    }
+
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Here you would typically verify credentials with a server
+            console.log('Login attempted');
+            alert('Login successful!');
+            this.reset();
         });
     }
 });
 
-
-// Form Validation for Contact Page
-function validateEmail(input) {
-    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(input);
+function updateStars(rating) {
+    const stars = document.querySelectorAll('.rating .star');
+    stars.forEach(star => {
+        if (parseInt(star.getAttribute('data-value')) <= rating) {
+            star.classList.add('active');
+        } else {
+            star.classList.remove('active');
+        }
+    });
 }
 
-function validateForm(event) {
-    var emailInput = document.getElementById('email');
-    if (!validateEmail(emailInput.value)) {
-        alert('Please enter a valid email address.');
-        event.preventDefault();
-    } else {
-        event.preventDefault(); // Prevent the default form submission
-        document.getElementById('thank-you-message').style.display = 'block'; // Show the thank you message
-        setTimeout(function() {
-            document.getElementById('contact-form').reset(); // Reset the form
-            document.getElementById('thank-you-message').style.display = 'none'; // Hide the thank you message
-        }, 5000);
-        let seconds = document.getElementById('countdown');
-        seconds.innerHTML = 5;
-        let count = 5;
-        const countdown = setInterval(function(){
-            count -= 1;
-            seconds.innerHTML = count;
-            if(count == 0){
-                clearInterval(countdown);
-            }
-        }, 1000);
+function encrypt() {
+    const option = document.getElementById('select-cipher').value;
+    const text = document.getElementById('input').value;
+    switch(option) {
+        case "caesar": caesarEncrypt(text); break;
+        case "atbash": atbashEncrypt(text); break;
+        case "keyword": keywordEncrypt(text); break;
+        case "morse": morseEncrypt(text); break;
     }
 }
 
-
-
-// Form Validation for Account Page
-document.getElementById('accountForm').addEventListener('submit', function(event) {
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var confirmPassword = document.getElementById('confirmPassword').value;
-    var phone = document.getElementById('phone').value;
-    var postalCode = document.getElementById('postalCode').value;
-    var creditCard = document.getElementById('creditCard').value;
-
-    if (!validateEmail(email)) {
-        alert('Please enter a valid email address.');
-        event.preventDefault();
-    } else if (!validatePassword(password)) {
-        alert('Password must be at least 8 characters long and contain at least one number and one letter.');
-        event.preventDefault();
-    } else if (password !== confirmPassword) {
-        alert('Passwords do not match.');
-        event.preventDefault();
-    } else if (!validatePhone(phone)) {
-        alert('Please enter a valid phone number.');
-        event.preventDefault();
-    } else if (!validatePostalCode(postalCode)) {
-        alert('Please enter a valid postal code.');
-        event.preventDefault();
-    } else if (!validateCreditCard(creditCard)) {
-        alert('Please enter a valid credit card number.');
-        event.preventDefault();
+function decrypt() {
+    const option = document.getElementById('select-cipher').value;
+    const text = document.getElementById('input').value;
+    switch(option) {
+        case "caesar": caesarDecrypt(text); break;
+        case "atbash": atbashDecrypt(text); break;
+        case "keyword": keywordDecrypt(text); break;
+        case "morse": morseDecrypt(text); break;
     }
-});
-
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    var email = document.getElementById('loginEmail').value;
-    var password = document.getElementById('loginPassword').value;
-
-    if (!validateEmail(email)) {
-        alert('Please enter a valid email address.');
-        event.preventDefault();
-    } else if (password.trim() === "") {
-        alert('Please enter your password.');
-        event.preventDefault();
-    }
-});
-
-function validateEmail(email) {
-    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(email);
 }
 
-function validatePassword(password) {
-    var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    return regex.test(password);
+function flip() {
+    const leftHeading = document.getElementById("left-heading");
+    const rightHeading = document.getElementById("right-heading");
+    [leftHeading.textContent, rightHeading.textContent] = [rightHeading.textContent, leftHeading.textContent];
+
+    document.getElementById('result').innerHTML = "";
+
+    const encryptButton = document.getElementById('encrypt-button');
+    const decryptButton = document.getElementById('decrypt-button');
+    encryptButton.style.display = encryptButton.style.display === "none" ? "block" : "none";
+    decryptButton.style.display = decryptButton.style.display === "none" ? "block" : "none";
 }
 
-function validatePhone(phone) {
-    var regex = /^[0-9]{10}$/;
-    return regex.test(phone);
+function caesarEncrypt(inputText) {
+    const shift = parseInt(document.getElementById('shift').value);
+    const encoded = inputText.split('').map(char => {
+        if (char.match(/[a-z]/i)) {
+            const code = char.charCodeAt();
+            const base = (code >= 65 && code <= 90) ? 65 : 97;
+            return String.fromCharCode(((code - base + shift) % 26) + base);
+        }
+        return char;
+    }).join('');
+    document.getElementById('result').textContent = encoded;
 }
 
-function validatePostalCode(postalCode) {
-    var regex = /^[A-Za-z0-9]{6}$/;
-    return regex.test(postalCode);
+function caesarDecrypt(inputText) {
+    const shift = parseInt(document.getElementById('shift').value);
+    const decoded = inputText.split('').map(char => {
+        if (char.match(/[a-z]/i)) {
+            const code = char.charCodeAt();
+            const base = (code >= 65 && code <= 90) ? 65 : 97;
+            return String.fromCharCode(((code - base - shift + 26) % 26) + base);
+        }
+        return char;
+    }).join('');
+    document.getElementById('result').textContent = decoded;
 }
 
-function validateCreditCard(creditCard) {
-    var regex = /^[0-9]{16}$/;
-    return regex.test(creditCard);
+function atbashEncrypt(inputText) {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const reverseAlphabet = 'ZYXWVUTSRQPONMLKJIHGFEDCBA';
+    const encoded = inputText.split('').map(char => {
+        if (char.match(/[a-zA-Z]/)) {
+            const upperChar = char.toUpperCase();
+            const index = alphabet.indexOf(upperChar);
+            let transformedChar = reverseAlphabet[index];
+            return char === char.toLowerCase() ? transformedChar.toLowerCase() : transformedChar;
+        }
+        return char;
+    }).join('');
+    document.getElementById('result').textContent = encoded;
+}
+
+function atbashDecrypt(inputText) {
+    return atbashEncrypt(inputText); // Atbash is its own inverse
+}
+
+function generateCipherAlphabet(keyword) {
+    const uniqueKeyword = Array.from(new Set(keyword.toUpperCase()));
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    return uniqueKeyword.join('') + alphabet.split('').filter(letter => !uniqueKeyword.includes(letter)).join('');
+}
+
+function keywordEncrypt(inputText) {
+    const keyword = document.getElementById('keyword').value;
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const cipherAlphabet = generateCipherAlphabet(keyword);
+    const encoded = inputText.split('').map(char => {
+        const isUpperCase = char === char.toUpperCase();
+        const baseChar = char.toUpperCase();
+        if (alphabet.includes(baseChar)) {
+            const cipherChar = cipherAlphabet[alphabet.indexOf(baseChar)];
+            return isUpperCase ? cipherChar : cipherChar.toLowerCase();
+        }
+        return char;
+    }).join('');
+    document.getElementById('result').textContent = encoded;
+}
+
+function keywordDecrypt(inputText) {
+    const keyword = document.getElementById('keyword').value;
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const cipherAlphabet = generateCipherAlphabet(keyword);
+    const decoded = inputText.split('').map(char => {
+        const isUpperCase = char === char.toUpperCase();
+        const baseChar = char.toUpperCase();
+        if (cipherAlphabet.includes(baseChar)) {
+            const originalChar = alphabet[cipherAlphabet.indexOf(baseChar)];
+            return isUpperCase ? originalChar : originalChar.toLowerCase();
+        }
+        return char;
+    }).join('');
+    document.getElementById('result').textContent = decoded;
+}
+
+const morseCode = {
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 
+    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', 
+    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', 
+    '9': '----.', '0': '-----', ' ': '/'
+};
+
+function morseEncrypt(inputText) {
+    const encoded = inputText.toUpperCase().split('').map(char => morseCode[char] || char).join(' ');
+    document.getElementById('result').textContent = encoded;
+}
+
+function morseDecrypt(inputText) {
+    const morseToText = Object.keys(morseCode).reduce((obj, key) => {
+        obj[morseCode[key]] = key;
+        return obj;
+    }, {});
+    const decoded = inputText.split(' ').map(symbol => morseToText[symbol] || symbol).join('');
+    document.getElementById('result').textContent = decoded;
 }
