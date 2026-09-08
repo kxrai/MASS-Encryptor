@@ -1,32 +1,32 @@
-# Web Application Name: MASS Encryptor 🚀🔐
+# Web Application Name: MASS Encryptor 
 
 **Group Members:**
-- **Alicia Loi** 🎓
+- **Alicia Loi** 
   - Email: aloi2005@my.yorku.ca
-- **Sienna Markham** 🌟
+- **Sienna Markham** 
   - Email: skm23@my.yorku.ca
-- **Mahjabin Mollah** 💡
+- **Mahjabin Mollah** 
   - Email: mollah25@my.yorku.ca
-- **Steeve Nchanda** 🔍
+- **Steeve Nchanda** 
   - Email: snchanda@my.yorku.ca
 
-## Purpose 🎯📚
+## Purpose 
 MASS Encryptor is a web application designed to engage users in cryptography by providing tools to encrypt and decrypt messages using common ciphers. It's an educational and fun tool suitable for a wide range of users.
 
-## Target Audience and Needs 🧒🕹️🧑‍💼🔒🧩🧠
+## Target Audience and Needs 
 The application is aimed at the general public and for educational purposes. It caters to:
 - **Young children:** Learning about ciphers in a fun, interactive way.
 - **Adults:** Exchanging private information securely.
 - **Puzzle enthusiasts:** Testing their code-breaking skills with a quick checker.
 
-## Features 📝🔏📝🔓📘📖🔍🛡️📊💬🛠️
+## Features 
 - **Encoder:** Select a cipher to encode messages (e.g., Caesar Cipher, Keyword Cipher, Atbash Cipher, Morse Code).
 - **Decoder:** Select a cipher to decode messages using the same ciphers.
 - **Educational Content:** Descriptions of different ciphers and their common uses, along with how each cipher works.
 - **User Education:** Information on data encryption and security measures.
 - **Support Page:** User feedback and feature requests.
 
-## Technical Considerations 🖥️✨🎨🌗📱🌐🔐🔗🔑📜🏷️🧭⌨️🚀💻🔢
+## Technical Considerations 
 ### User Interface
 - Clear, interactive, and easy-to-use interface for all ages.
 - Customizable themes (light mode, dark mode).
@@ -43,7 +43,7 @@ The application is aimed at the general public and for educational purposes. It 
 ### Functionality
 - JavaScript algorithms for encoding and decoding messages using various ciphers.
 
-## Future Features and Considerations 🌟🔮🚀
+## Future Features and Considerations 
 - **Video Tutorials:** Future addition of video tutorials and explanations on using the encoder and decoder.
 - **Additional Ciphers:** Adding more ciphers to expand the toolset.
 - **Custom Ciphers:** A feature to create custom ciphers, allowing users to design their own encryption methods.
